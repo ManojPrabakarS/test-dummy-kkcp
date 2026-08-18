@@ -177,7 +177,7 @@ export function AdmissionsSection() {
             </h2>
 
             <p className="adm-desc">
-              Begin your Pharmacy career at K.K. College of Pharmacy – PCI approved, Tamil Nadu Dr. M.G.R. Medical University affiliated and committed to Pharmaceutical Excellence since 1992.
+              Begin your Pharmacy career at K.K. College of Pharmacy – PCI approved, Tamil Nadu Dr. M.G.R. Medical University affiliated institution since 1992.
             </p>
           </div>
 
