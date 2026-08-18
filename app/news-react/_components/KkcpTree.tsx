@@ -34,17 +34,17 @@ const TOP_TITLE = `LATEST NEWS AND EVENTS`;
 const MEENA = {
   name: `Dr. A. Meena`,
   role: `Principal`,
-  src: `/kkcp/web/home/7-kkcp-faculty-1-dr-a-meena-principal-prof-dept-of-pharmaceutical-chemistry.jpg`,
+  src: `/kkcp/web/home/7-kkcp-faculty-1-dr-a-meena-principal-prof-dept-of-pharmaceutical-chemistry.webp`,
 };
 const SHANTHY = {
   name: `Dr. A. Shanthy`,
   role: `Dean of Academics`,
-  src: `/kkcp/web/home/7-kkcp-faculty-2-dr-a-shanthy-dean-of-academics.jpg`,
+  src: `/kkcp/web/home/7-kkcp-faculty-2-dr-a-shanthy-dean-of-academics.webp`,
 };
 const VEDHAPAL = {
   name: `Dr. S. Vedhapal Jeyamani`,
   role: `Professor, Dept. of Pharmacy Practice`,
-  src: `/kkcp/web/home/7-kkcp-faculty-dr-s-vedhapal-jayamani-prof-dept-of-pharmacy-practice.jpg`,
+  src: '/kkcp/web/home/7-kkcp-faculty-dr-s-vedhapal-jayamani-prof-dept-of-pharmacy-practice.webp',
 };
 
 const NEWS = [

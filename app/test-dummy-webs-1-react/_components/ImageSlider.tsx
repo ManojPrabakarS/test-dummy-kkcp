@@ -21,7 +21,7 @@ export default function ImageSlider() {
   }, []);
 
   return (
-    <div className="absolute inset-0 z-[8] h-full w-full overflow-hidden">
+    <div className="absolute inset-0 z-8 h-full w-full overflow-hidden">
       {images.map((image, index) => (
         <div
           key={image}
