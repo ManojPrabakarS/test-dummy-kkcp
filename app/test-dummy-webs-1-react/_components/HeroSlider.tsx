@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 // Verbatim slide content (line breaks preserved exactly as provided).
 const SLIDES: string[][] = [
   ["The Tamil Nadu", "Dr. M.G.R. Medical University", "Recognized Ph.D.", "Research Centre"],
-  ["PCI has approved New Courses", "M.Pharm Pharmacy Practice & M.Pharm Regulatory Affairs"],
+  ["PCI Approved New PG Courses M.Pharm - Pharmacy Practice and Regulatory Affairs."],
   ["Admission", "Open for", "2025-2026"],
 ];
 

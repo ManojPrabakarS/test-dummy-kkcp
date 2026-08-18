@@ -93,3 +93,21 @@
   inset: 0;
   z-index: 5;
 }
+
+/* Fix "Know More" button width display */
+.clone-root .elementor-element-6c5312e {
+  width: 100% !important;
+  max-width: 350px !important;
+  flex: 0 1 auto !important;
+}
+.clone-root .elementor-element-6c5312e .rs-button {
+  display: flex !important;
+  white-space: normal !important;
+  padding: 16px 40px !important;
+  width: 100% !important;
+  min-height: 50px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
