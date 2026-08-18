@@ -54,7 +54,7 @@ export function MessageSlider({ cards }: { cards: Card[] }) {
         .kkcp-msg-left .meta-role{font-size:15px; line-height:1.5; color:#7a8095; margin-top:5px;}
         /* RIGHT: message body */
         .kkcp-msg-right .body{
-          font-size:19px; line-height:1.95; color:#3d435a; font-style:italic;
+          font-size:19px; line-height:1.95; color:#3d435a; font-style:italic; max-width:80%
         }
         .kkcp-msg-right .body p, .kkcp-msg-right .body{margin-top:0;}
         /* controls */
@@ -97,7 +97,7 @@ export function MessageSlider({ cards }: { cards: Card[] }) {
             <img className="kkcp-msg-photo" src={card.photo} alt={card.name} />
           )}
           <span className="quote-icon" aria-hidden="true">&#8221;</span>
-          <div className="msg-title">{card.title}</div>
+       
           <div className="meta-name">{card.name}</div>
           <div className="meta-role" dangerouslySetInnerHTML={{ __html: card.role }} />
 
@@ -121,6 +121,7 @@ export function MessageSlider({ cards }: { cards: Card[] }) {
         </div>
 
         <div className="kkcp-msg-right">
+             <h2 className="msg-title">{card.title}</h2>
           <div className="body" dangerouslySetInnerHTML={{ __html: card.body }} />
         </div>
       </div>

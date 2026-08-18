@@ -282,6 +282,6 @@ export const MANAGEMENT_PORTRAITS: Record<string, string> = {
     "/kkcp/web/about/3-messages-from-the-management-dr-a-babu-thandapani-m-pharm-ph-d-vice-chairman-ultra-group-of-institutions.webp",
   "Principal":
     "/kkcp/web/about/3-messages-from-the-management-dr-a-meena-m-pharm-ph-d-principal-k-k-college-of-pharmacy.webp",
-  "Vice-Principal":
+  "Deen of Academics":
     "/kkcp/web/about/3-messages-from-the-management-dr-a-shanthi-m-pharm-ph-d-vice-principal-k-k-college-of-pharmacy.webp",
 };
