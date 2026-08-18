@@ -2180,7 +2180,40 @@
 .kkcp-root .elementor.elementor .elementor-widget-n-tabs.e-n-tabs-laptop .e-n-tab-title[aria-selected=true]{margin-block-end:var(--n-tabs-gap)}
 }
 .kkcp-root .elementor-6965 .elementor-element.elementor-element-18b5a003{--display:flex;--justify-content:center;--align-items:flex-start;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--padding-top:190px;--padding-bottom:110px;--padding-left:20px;--padding-right:20px;}
-.kkcp-root .elementor-6965 .elementor-element.elementor-element-18b5a003:not(.elementor-motion-effects-element-type-background), .kkcp-root .elementor-6965 .elementor-element.elementor-element-18b5a003 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:var( --e-global-color-primary );background-image:url(/program-med/assets/0062__page-bnr-img1-1-min.webp);background-position:center left;background-repeat:no-repeat;background-size:cover;}
+
+
+.kkcp-root .elementor-6965 .elementor-element.elementor-element-18b5a003 {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background image */
+.kkcp-root .elementor-6965 .elementor-element.elementor-element-18b5a003:not(.elementor-motion-effects-element-type-background) {
+  background-color: var(--e-global-color-primary);
+  background-image: url(/images/kkcp/kkcp_clg.jpeg);
+  background-position: center bottom -100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Black transparent screen layer */
+.kkcp-root .elementor-6965 .elementor-element.elementor-element-18b5a003::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+  pointer-events: none;
+  
+}
+
+/* Keep breadcrumb/title above the black layer */
+.kkcp-root .elementor-6965 .elementor-element.elementor-element-18b5a003 > .e-con-inner {
+  position: relative;
+  z-index: 2;
+}
+
+
 .kkcp-root .elementor-6965 .elementor-element.elementor-element-18b5a003::before, .kkcp-root .elementor-6965 .elementor-element.elementor-element-18b5a003 > .elementor-background-video-container::before, .kkcp-root .elementor-6965 .elementor-element.elementor-element-18b5a003 > .e-con-inner > .elementor-background-video-container::before, .kkcp-root .elementor-6965 .elementor-element.elementor-element-18b5a003 > .elementor-background-slideshow::before, .kkcp-root .elementor-6965 .elementor-element.elementor-element-18b5a003 > .e-con-inner > .elementor-background-slideshow::before, .kkcp-root .elementor-6965 .elementor-element.elementor-element-18b5a003 > .elementor-motion-effects-container > .elementor-motion-effects-layer::before{background-color:transparent;--background-overlay:'';background-image:linear-gradient(180deg, #00192C00 -3%, #00192C 133.75%);}
 .kkcp-root .elementor-6965 .elementor-element.elementor-element-615fda6e .rstb-breadcrumb, .kkcp-root .elementor-6965 .elementor-element.elementor-element-615fda6e .rstb-breadcrumb a{color:#FFFFFF;}
 .kkcp-root .elementor-6965 .elementor-element.elementor-element-615fda6e .rstb-breadcrumb .current-item{color:#FFFFFF;}
