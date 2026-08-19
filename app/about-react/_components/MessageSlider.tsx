@@ -122,7 +122,7 @@ export function MessageSlider({ cards }: { cards: Card[] }) {
 
         <div className="kkcp-msg-right">
              <h2 className="msg-title">{card.title}</h2>
-          <div className="body" dangerouslySetInnerHTML={{ __html: card.body }} />
+          <div className="body text-justify" dangerouslySetInnerHTML={{ __html: card.body }} />
         </div>
       </div>
     </div>

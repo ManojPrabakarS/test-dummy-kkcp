@@ -22,40 +22,32 @@ export default function ImageSlider() {
 
   return (
     <div className="absolute inset-0 z-[8] h-full w-full overflow-hidden">
-      {images.map((image, index) => (
-        <div
-          key={image}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentIndex ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <Image
-            src={image}
-            alt={`Banner ${index + 1}`}
-            fill
-            priority={index === 0}
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-      ))}
+      {images.map((image, index) => {
+        const isActive = index === currentIndex;
 
-      {/* Dots */}
-      {/* <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 gap-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            type="button"
-            onClick={() => setCurrentIndex(index)}
-            aria-label={`Go to slide ${index + 1}`}
-            className={`h-2.5 rounded-full transition-all duration-300 ${
-              index === currentIndex
-                ? "w-8 bg-white"
-                : "w-2.5 bg-white/50"
+        return (
+          <div
+            key={image}
+            className={`absolute inset-0 h-full w-full transition-all duration-1800 ease-in-out ${
+              isActive
+                ? "translate-x-0 opacity-100"
+                : "translate-x-[-12%] opacity-0"
             }`}
-          />
-        ))}
-      </div> */}
+          >
+            <Image
+              src={image}
+              alt={`Banner ${index + 1}`}
+              fill
+              priority={index === 0}
+              className="object-cover"
+              sizes="100vw"
+            />
+
+            {/* Black Overlay */}
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
+        );
+      })}
     </div>
   );
 }
