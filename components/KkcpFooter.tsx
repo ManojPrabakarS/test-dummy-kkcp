@@ -1,17 +1,493 @@
 // @ts-nocheck
 "use client";
+
+import { MdArrowOutward } from "react-icons/md";
+
 export function KkcpFooter() {
   return (
-    <footer className="rstb-footer">
-      <div data-elementor-type={"wp-post"} data-elementor-id={"74"} className="elementor elementor-74">
-        <div data-aos-once={"true"} className="elementor-element elementor-element-ae6ea44 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id={"ae6ea44"} data-element_type={"container"} data-e-type={"container"} data-settings={"{\"background_background\":\"gradient\"}"}>
-          <div className="e-con-inner">
-            <div data-aos-once={"true"} className="elementor-element elementor-element-cc05f83 elementor-absolute gsap-move-yes right-50 start-50 elementor-hidden-tablet_extra elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"cc05f83"} data-element_type={"widget"} data-e-type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{ transform: "translate(0px, 0px)" }}>{" "}
-              <div className="rs-image">{" "}
-                <img className="rs-multi-image  reverse- blend_unset" src="/campus-life/assets/0093__arrow-top-icon-2-1-1.webp" alt="arrow-top-icon-2-1.png" />{" "}
+    <footer className="w-full bg-[#063f65] text-white">
+      <div className="mx-auto w-full">
+        <div className="flex w-full flex-col lg:flex-row">
+          {/* =====================================================
+              LEFT SIDE
+          ====================================================== */}
+          <div
+            className="
+              flex!
+              w-full!
+              flex-col!
+              px-8!
+              pt-8!
+              pb-6!
+              sm:px-12!
+              lg:w-[34.5%]!
+              lg:min-h-90!
+              lg:px-[7%]!
+              lg:pt-10!
+              lg:pb-6!
+            "
+          >
+            {/* LOGO */}
+            <div className="flex flex-col items-start">
+              <span
+                className="
+      inline-flex
+      items-center
+      justify-center
+      rounded-[10px]
+      bg-white
+      px-2
+      py-1
+    "
+              >
+                <img
+                  src="/kkcp/kkcp_logo_.png"
+                  alt="KK College of Pharmacy"
+                  className="block! h-25!  w-auto! max-w-none! object-contain!"
+                />
+              </span>
+
+              <h3
+                className="
+      mt-5!
+      text-[18px]!
+      font-bold!
+      leading-tight!
+      text-white!
+      sm:text-[20px]!
+    "
+              >
+                KK College of Pharmacy
+              </h3>
+            </div>
+
+            {/* EMAIL + PHONE - STACKED */}
+            <div
+              className="
+                mt-1!
+                flex!
+                flex-col!
+                gap-5!
+              "
+            >
+              {/* EMAIL */}
+              <div className="flex flex-col">
+                <h4
+                  className="
+                    m-0!
+                    text-[16px]!
+                    font-semibold!
+                    leading-[1.4]!
+                    text-white!
+                  "
+                >
+                  Email:
+                </h4>
+
+                <p
+                  className="
+                    m-0!
+                    mt-1!
+                    break-all!
+                    text-[16px]!
+                    font-medium!
+                    leading-normal!
+                    text-white!
+                  "
+                >
+                  kkcpchennai@gmail.com
+                </p>
+              </div>
+
+              {/* PHONE */}
+              <div className="flex flex-col">
+                <h4
+                  className="
+                    m-0!
+                    text-[16px]!
+                    font-semibold!
+                    leading-[1.4]!
+                    text-white!
+                  "
+                >
+                  Phone:
+                </h4>
+
+                <p
+                  className="
+                    m-0!
+                    mt-1!
+                    text-[16px]!
+                    font-medium!
+                    leading-normal!
+                    text-white!
+                  "
+                >
+                  044-23821272 / 98412 59415
+                </p>
               </div>
             </div>
-            <div data-aos-once={"true"} className="elementor-element elementor-element-197122f e-con-full e-flex e-con e-child" data-id={"197122f"} data-element_type={"container"} data-e-type={"container"} data-settings={"{\"background_background\":\"classic\"}"}>
-              <div data-aos-once={"true"} className="elementor-element elementor-element-acaee80 elementor-widget elementor-widget-rstb-site-logo" data-id={"acaee80"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rstb-site-logo.default"}>{" "}<div className="rstb-site-logo"><span style={{ backgroundColor: "#ffffff", borderRadius: "10px", padding: "6px 12px", display: "inline-flex", alignItems: "center" }}><img src="/kkcp/kkcp-logo.png" alt="KKCP" style={{ height: "52px", width: "auto", display: "block", objectFit: "contain" }} /></span>{" "}</div></div><div data-aos-once={"true"} className="elementor-element elementor-element-cab1879 e-con-full e-flex e-con e-child" data-id={"cab1879"} data-element_type={"container"} data-e-type={"container"}><div data-rs-link-anything={"{\"url\":\"mailto:kkcpchennai@gmail.com\",\"is_external\":\"\",\"nofollow\":\"on\"}"} data-aos-once={"true"} className="elementor-element elementor-element-2d10076 elementor-widget elementor-widget-rs-iconbox" data-id={"2d10076"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rs-iconbox.default"} style={{ cursor: "pointer" }}>{" "}<div className="rs-iconbox-area">{" "}<div className="box-inner">{" "}<div className="text-area"><h4 className="title">Email:</h4>{" "}<p className="desc">  kkcpchennai@gmail.com</p>{" "}</div>{" "}</div>{" "}</div></div><div data-rs-link-anything={"{\"url\":\"tel:+12018953801\",\"is_external\":\"\",\"nofollow\":\"on\"}"} data-aos-once={"true"} className="elementor-element elementor-element-0be6628 elementor-widget elementor-widget-rs-iconbox" data-id={"0be6628"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rs-iconbox.default"} style={{ cursor: "pointer" }}>{" "}<div className="rs-iconbox-area">{" "}<div className="box-inner">{" "}<div className="text-area"><p className="title">Phone:</p>{" "}<p className="desc">  044-23821272 / 98412 59415</p>{" "}</div>{" "}</div>{" "}</div></div></div></div><div data-aos-once={"true"} className="elementor-element elementor-element-afdc44d e-con-full e-flex e-con e-child" style={{ marginLeft: "auto" }} data-id={"afdc44d"} data-element_type={"container"} data-e-type={"container"} data-settings={"{\"background_background\":\"classic\"}"}><div data-aos-once={"true"} className="elementor-element elementor-element-eb7c9ab e-con-full e-flex e-con e-child" data-id={"eb7c9ab"} data-element_type={"container"} data-e-type={"container"}><div data-aos-once={"true"} className="elementor-element elementor-element-e140514 e-con-full e-flex e-con e-child" data-id={"e140514"} data-element_type={"container"} data-e-type={"container"}><div data-aos-once={"true"} className="elementor-element elementor-element-9c02952 elementor-widget__width-initial elementor-widget-laptop__width-inherit elementor-widget elementor-widget-rs-heading" data-id={"9c02952"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rs-heading.default"}>{" "}<div className="prelements-heading default   animate-  ">{" "}<div className="title-inner"><h4 className="title  ">Our Campus</h4>{" "}</div>{" "}</div></div><div data-aos-once={"true"} className="elementor-element elementor-element-f1e1d51 elementor-widget elementor-widget-rs-divider" data-id={"f1e1d51"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rs-divider.default"}>{" "}<div className="rs-divider dot-enable">{" "}<span>{" "}</span>{" "}</div></div><div data-aos-once={"true"} className="elementor-element elementor-element-394c668 elementor-widget elementor-widget-rstb-nav-menu" data-id={"394c668"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rstb-nav-menu.default"}>{" "}<div className="rstb-nav-menu nav-vertical nav-breakpoint-none "><ul id="menu-main-menu" className="primary-menu"><li className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item"><a href="/" target="_top" className="menu-item-link"><span className="menu-item-text">Home</span></a></li><li className="menu-item menu-item-type-custom menu-item-object-custom"><a href="/about/" target="_top" className="menu-item-link"><span className="menu-item-text">About</span></a></li><li className="menu-item menu-item-type-custom menu-item-object-custom"><a href="/research" target="_top" className="menu-item-link"><span className="menu-item-text">Research</span></a></li></ul>{" "}</div></div></div><div data-aos-once={"true"} className="elementor-element elementor-element-28f1291 e-con-full e-flex e-con e-child" data-id={"28f1291"} data-element_type={"container"} data-e-type={"container"}><div data-aos-once={"true"} className="elementor-element elementor-element-e3ac67e elementor-widget__width-initial elementor-widget-laptop__width-inherit elementor-widget elementor-widget-rs-heading" data-id={"e3ac67e"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rs-heading.default"}>{" "}<div className="prelements-heading default   animate-  ">{" "}<div className="title-inner"><h4 className="title  ">Useful Links</h4>{" "}</div>{" "}</div></div><div data-aos-once={"true"} className="elementor-element elementor-element-245f6a5 elementor-widget elementor-widget-rs-divider" data-id={"245f6a5"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rs-divider.default"}>{" "}<div className="rs-divider dot-enable">{" "}<span>{" "}</span>{" "}</div></div><div data-aos-once={"true"} className="elementor-element elementor-element-7f10156 elementor-widget elementor-widget-rstb-nav-menu" data-id={"7f10156"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rstb-nav-menu.default"}>{" "}<div className="rstb-nav-menu nav-vertical nav-breakpoint-none "><ul id="menu-main-menu" className="primary-menu"><li className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item"><a href="/" target="_top" className="menu-item-link"><span className="menu-item-text">Courses</span></a></li><li className="menu-item menu-item-type-custom menu-item-object-custom"><a href="/about/" target="_top" className="menu-item-link"><span className="menu-item-text">Departments</span></a></li><li className="menu-item menu-item-type-custom menu-item-object-custom"><a href="/research" target="_top" className="menu-item-link"><span className="menu-item-text">News and Updates</span></a></li></ul>{" "}</div></div></div><div data-aos-once={"true"} className="elementor-element elementor-element-51fc539 e-con-full e-flex e-con e-child" data-id={"51fc539"} data-element_type={"container"} data-e-type={"container"}><div data-aos-once={"true"} className="elementor-element elementor-element-7de0aea elementor-widget elementor-widget-rs-heading" data-id={"7de0aea"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rs-heading.default"}>{" "}<div className="prelements-heading default   animate-  ">{" "}<div className="title-inner"><h4 className="title  ">Newsletter</h4>{" "}</div>{" "}</div></div><div data-aos-once={"true"} className="elementor-element elementor-element-de4283e elementor-widget elementor-widget-rs-divider" data-id={"de4283e"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rs-divider.default"}>{" "}<div className="rs-divider dot-enable">{" "}<span>{" "}</span>{" "}</div></div><div data-aos-once={"true"} className="elementor-element elementor-element-d2ffa5f elementor-widget elementor-widget-rs-cf7" data-id={"d2ffa5f"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rs-cf7.default"}><div className="wpcf7 js" id="wpcf7-f317-o2" lang="en-US" dir="ltr" data-wpcf7-id={"317"}><div className="screen-reader-response"><p role="status" aria-live={"polite"} aria-atomic={"true"}></p>{" "}<ul></ul></div><form action="/blue/#wpcf7-f317-o2" method="post" className="wpcf7-form init" aria-label={"Contact form"} noValidate="novalidate" data-status={"init"}><fieldset className="hidden-fields-container"><input type="hidden" name="_wpcf7" value="317" /><input type="hidden" name="_wpcf7_version" value="6.1.5" /><input type="hidden" name="_wpcf7_locale" value="en_US" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f317-o2" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" /></fieldset><p><span className="wpcf7-form-control-wrap" data-name={"your-email"}><input size="40" maxLength="400" className="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" autoComplete="email" aria-required={"true"} aria-invalid={"false"} placeholder="Your email address" defaultValue="" type="email" name="your-email" /></span></p><div className="form-btn-area"><p><input className="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="submit" disabled /><span className="wpcf7-spinner"></span><br /><em>{" "}<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M9.67029 3.6295L1.78054 11.5192L0.484375 10.2231L8.37321 2.33333H1.42029V0.5H11.5036V10.5833H9.67029V3.6295Z" fill="#2B3944" /></svg><br /><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M9.67029 3.6295L1.78054 11.5192L0.484375 10.2231L8.37321 2.33333H1.42029V0.5H11.5036V10.5833H9.67029V3.6295Z" fill="#2B3944" /></svg>{" "}</em></p></div><p><span className="wpcf7-form-control-wrap" data-name={"your-consent"}><span className="wpcf7-form-control wpcf7-acceptance"><span className="wpcf7-list-item"><label><input type="checkbox" name="your-consent" value="1" aria-invalid={"false"} /><span className="wpcf7-list-item-label">I agree to the <a href="#"> Privacy Policy.</a></span></label></span></span></span></p><div className="wpcf7-response-output" aria-hidden={"true"}></div></form></div></div></div></div><div data-aos-once={"true"} className="elementor-element elementor-element-6a78618 e-con-full e-flex e-con e-child" data-id={"6a78618"} data-element_type={"container"} data-e-type={"container"}><div data-aos-once={"true"} className="elementor-element elementor-element-a1726c3 e-con-full e-flex e-con e-child" data-id={"a1726c3"} data-element_type={"container"} data-e-type={"container"}><div data-aos-once={"true"} className="elementor-element elementor-element-306ae9f elementor-widget elementor-widget-rstb-copyright" data-id={"306ae9f"} data-element_type={"widget"} data-e-type={"widget"} data-widget_type={"rstb-copyright.default"}><p className="rstb-copyright">© 2026 KKCP.</p></div></div></div></div></div></div></div></footer>
+          </div>
+
+          {/* =====================================================
+              RIGHT SIDE
+          ====================================================== */}
+          <div
+            className="
+              flex!
+              w-full!
+              flex-col!
+              px-8!
+              pt-8!
+              pb-6!
+              sm:px-12!
+              lg:w-[65.5%]!
+              lg:min-h-90!
+              lg:px-[3.5%]!
+              lg:pt-10!
+              lg:pb-6!
+              "
+          >
+            {/* TOP CONTENT */}
+            <div
+              className="
+                grid!
+                w-full!
+                grid-cols-1!
+                gap-10!
+                sm:grid-cols-2!
+                lg:grid-cols-3!
+                lg:gap-12!
+              "
+            >
+              {/* =================================================
+                  OUR CAMPUS
+              ================================================== */}
+              <div className="w-full!">
+                <h4
+                  className="
+                    m-0!
+                    inline-block!
+                    text-[26px]!
+                    font-bold!
+                    leading-tight!
+                    text-white!
+                    sm:text-[28px]!
+                  "
+                >
+                  Our Campus
+                </h4>
+
+                {/* Divider */}
+                <div className="mt-4! h-px! w-full! bg-white/10!">
+                  <div className="h-0.5! w-22! bg-white!" />
+                </div>
+
+                <ul className="m-0! mt-7! list-none! space-y-4! p-0!">
+                  <li>
+                    <a
+                      href="/"
+                      className="
+                        text-[20px]!
+                        font-medium!
+                        leading-[1.4]!
+                        text-[#ffca28]!
+                        no-underline!
+                        transition-opacity!
+                        hover:opacity-80!
+                      "
+                    >
+                      Home
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="/about/"
+                      className="
+                        text-[20px]!
+                        font-medium!
+                        leading-[1.4]!
+                        text-white/65!
+                        no-underline!
+                        transition-colors!
+                        hover:text-white!
+                      "
+                    >
+                      About
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="/research"
+                      className="
+                        text-[20px]!
+                        font-medium!
+                        leading-[1.4]!
+                        text-white/65!
+                        no-underline!
+                        transition-colors!
+                        hover:text-white!
+                      "
+                    >
+                      Research
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* =================================================
+                  USEFUL LINKS
+              ================================================== */}
+              <div className="w-full!">
+                <h4
+                  className="
+                    m-0!
+                    inline-block!
+                    text-[26px]!
+                    font-bold!
+                    leading-tight!
+                    text-white!
+                    sm:text-[28px]!
+                  "
+                >
+                  Useful Links
+                </h4>
+
+                {/* Divider */}
+                <div className="mt-4! h-px! w-full! bg-white/10!">
+                  <div className="h-0.5! w-22! bg-white!" />
+                </div>
+
+                <ul className="m-0! mt-7! list-none! space-y-4! p-0!">
+                  <li>
+                    <a
+                      href="/"
+                      className="
+                        text-[20px]!
+                        font-medium!
+                        leading-[1.4]!
+                        text-[#ffca28]!
+                        no-underline!
+                        transition-opacity!
+                        hover:opacity-80!
+                      "
+                    >
+                      Courses
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="/about/"
+                      className="
+                        text-[20px]!
+                        font-medium!
+                        leading-[1.4]!
+                        text-white/65!
+                        no-underline!
+                        transition-colors!
+                        hover:text-white!
+                      "
+                    >
+                      Departments
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="/research"
+                      className="
+                        text-[20px]!
+                        font-medium!
+                        leading-[1.4]!
+                        text-white/65!
+                        no-underline!
+                        transition-colors!
+                        hover:text-white!
+                      "
+                    >
+                      News and Updates
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* =================================================
+                  NEWSLETTER
+              ================================================== */}
+              <div className="w-full!">
+                <h4
+                  className="
+                    m-0!
+                    inline-block!
+                    text-[26px]!
+                    font-bold!
+                    leading-tight!
+                    text-white!
+                    sm:text-[28px]!
+                  "
+                >
+                  Newsletter
+                </h4>
+
+                {/* Divider */}
+                <div className="mt-4! h-px! w-full! bg-white/10!">
+                  <div className="h-0.5! w-22! bg-white!" />
+                </div>
+
+                {/* EMAIL INPUT */}
+                <form className="mt-9! w-full!">
+                  <div
+                    className="
+    flex!
+    h-[70px]!
+    w-full
+    items-center!
+    overflow-hidden!
+    rounded-[10px]!
+    bg-[#033858]!
+  "
+                  >
+                    <input
+                      type="email"
+                      placeholder="Your email address"
+                      className="
+      h-full!
+      min-w-0!
+      flex-1!
+      border-0!
+      bg-transparent!
+      px-5!
+      text-[17px]!
+      font-medium!
+      text-white!
+      outline-none!
+      placeholder:text-white!
+    "
+                    />
+
+                    <button
+                      type="submit"
+                      className="
+      mr-1!
+      flex!
+      h-[58px]!
+      w-[58px]!
+      shrink-0!
+      appearance-none!
+      items-center!
+      justify-center!
+      rounded-[10px]!
+      border-0!
+      bg-[#ffca28]!
+      p-0!
+      opacity-100!
+      transition-opacity!
+      hover:opacity-90!
+    "
+                    >
+                      <MdArrowOutward
+                        className="
+        block!
+        h-[30px]!
+        w-[30px]!
+        text-[#063f65]!
+      "
+                      />
+                    </button>
+                  </div>
+
+                  {/* PRIVACY */}
+                  <label
+                    className="
+                      mt-6!
+                      flex!
+                      cursor-pointer!
+                      items-start!
+                      gap-2!
+                      text-[17px]!
+                      font-medium!
+                      leading-normal!
+                      text-white/65!
+                    "
+                  >
+                    <input
+                      type="checkbox"
+                      className="
+    mt-0.75!
+    h-5.5!
+    w-5.5!
+    shrink-0!
+    cursor-pointer!
+    appearance-none!
+    rounded-[3px]!
+    border!
+    border-white!
+    bg-transparent!
+    
+    checked:border-[#ffca28]!
+    checked:bg-[#ffca28]!
+    
+    checked:after:content-['✓']!
+    checked:after:block!
+    checked:after:text-center!
+    checked:after:text-[16px]!
+    checked:after:font-bold!
+    checked:after:leading-[21px]!
+    checked:after:text-[#063f65]!
+  "
+                    />
+
+                    <span>
+                      I agree to the{" "}
+                      <a
+                        href="#"
+                        className="
+                          font-semibold!
+                          text-white/75!
+                          underline!
+                        "
+                      >
+                        Privacy Policy.
+                      </a>
+                    </span>
+                  </label>
+                </form>
+              </div>
+            </div>
+
+            {/* =================================================
+                BOTTOM COPYRIGHT
+            ================================================== */}
+            <div
+              className="
+                mt-8!
+                border-t!
+                border-white/10!
+                pt-8!
+                lg:mt-8!
+                lg:pt-8!
+              "
+            >
+              <p
+                className="
+                  m-0!
+                  text-[14px]!
+                  font-medium!
+                  text-white!
+                "
+              >
+                © 2026 KKCP. Designed By {" "}
+                <a href="https://classydigitalmarketing.com/" className="text-white! mb-0!">
+                    Classy Digital Marketing
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }

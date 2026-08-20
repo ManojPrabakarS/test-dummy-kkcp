@@ -4,7 +4,7 @@ export type FacultyMember = { name: string; designation: string; src: string };
  *  (the only source — Department.md carries no faculty data). Obvious filename typos corrected
  *  with the client's explicit approval. */
 export const FACULTY_BY_DEPARTMENT: Record<string, FacultyMember[]> = {
-  "pharmaceutics": [
+  pharmaceutics: [
     {
       name: "Dr. A. Shanthy",
       designation: "Vice-Principal & HOD, Dept. of Pharmaceutics",
@@ -105,7 +105,7 @@ export const FACULTY_BY_DEPARTMENT: Record<string, FacultyMember[]> = {
     },
   ],
 
-  "pharmacognosy": [
+  pharmacognosy: [
     {
       name: "Mrs. S. Thamizharasi",
       designation: "Professor & HOD, Dept. of Pharmacognosy",
@@ -128,7 +128,7 @@ export const FACULTY_BY_DEPARTMENT: Record<string, FacultyMember[]> = {
     },
   ],
 
-  "pharmacology": [
+  pharmacology: [
     {
       name: "Dr. C. Senthilkumari",
       designation: "Professor & HOD, Dept. of Pharmacology",
@@ -228,34 +228,32 @@ export const HOME_FACULTY: FacultyMember[] = [
     src: "/kkcp/web/home/7-kkcp-faculty-2-dr-a-shanthy-dean-of-academics.webp",
   },
   {
-    name: "Dr. C. Senthilkumari",
-    designation: "Professor, Dept. of Pharmacology",
-    src: "/kkcp/web/home/7-kkcp-faculty-dr-c-senthilkumari-prof-dept-of-pharmacology.webp",
-  },
-  {
-    name: "Dr. K. Karthick",
-    designation: "Professor, Dept. of Pharmaceutics",
-    src: "/kkcp/web/home/7-kkcp-faculty-dr-k-karthik-prof-dept-of-pharmaceutics.webp",
+    name: "Dr. S. Ramalakshmi",
+    designation: "HOD, Dept. of Pharmacy Practice",
+    src: "/kkcp/web/home/7-kkcp-faculty-dr-s-ramalakshmi-hod-dept-of-pharmacy-practice.webp",
   },
   {
     name: "Dr. M. Vani",
     designation: "Professor, Dept. of Pharmaceutics",
     src: "/kkcp/web/home/7-kkcp-faculty-dr-m-vani-prof-dept-of-pharmaceutics.webp",
   },
+
   {
-    name: "Dr. S. Ramalakshmi",
-    designation: "HOD, Dept. of Pharmacy Practice",
-    src: "/kkcp/web/home/7-kkcp-faculty-dr-s-ramalakshmi-hod-dept-of-pharmacy-practice.webp",
-  },
-  {
-    name: "Dr. S. Sivaneswari",
+    name: "Dr. K. Karthick",
     designation: "Professor, Dept. of Pharmaceutics",
-    src: "/kkcp/web/home/7-kkcp-faculty-dr-s-sivaneswari-prof-dept-of-pharmaceutics.webp",
+    src: "/kkcp/web/home/7-kkcp-faculty-dr-k-karthik-prof-dept-of-pharmaceutics.webp",
   },
+
   {
-    name: "Dr. S. Vedhapal Jeyamani",
-    designation: "Professor, Dept. of Pharmacy Practice",
-    src: "/kkcp/web/home/7-kkcp-faculty-dr-s-vedhapal-jayamani-prof-dept-of-pharmacy-practice.webp",
+    name: "Prof. S. L. Laura",
+    designation: "Associate Professor, Dept. of Pharmaceutics",
+    src: "/kkcp/web/home/7-kkcp-faculty-prof-s-l-laura-dept-of-pharmaceutics.webp",
+  },
+
+  {
+    name: "Dr. C. Senthilkumari",
+    designation: "Professor, Dept. of Pharmacology",
+    src: "/kkcp/web/home/7-kkcp-faculty-dr-c-senthilkumari-prof-dept-of-pharmacology.webp",
   },
   {
     name: "Dr. V. Prema",
@@ -263,25 +261,30 @@ export const HOME_FACULTY: FacultyMember[] = [
     src: "/kkcp/web/home/7-kkcp-faculty-dr-v-prema-prof-dept-of-pharmaceutical-chemistry.webp",
   },
   {
+    name: "Dr. S. Vedhapal Jeyamani",
+    designation: "Professor, Dept. of Pharmacy Practice",
+    src: "/kkcp/web/home/7-kkcp-faculty-dr-s-vedhapal-jayamani-prof-dept-of-pharmacy-practice.webp",
+  },
+  {
+    name: "Dr. S. Sivaneswari",
+    designation: "Professor, Dept. of Pharmaceutics",
+    src: "/kkcp/web/home/7-kkcp-faculty-dr-s-sivaneswari-prof-dept-of-pharmaceutics.webp",
+  },
+  {
     name: "Mrs. S. Thamizharasi",
     designation: "Professor, Dept. of Pharmacognosy",
     src: "/kkcp/web/home/7-kkcp-faculty-mrs-s-thamizharasi-prof-dept-of-pharmacognosy.webp",
-  },
-  {
-    name: "Prof. S. L. Laura",
-    designation: "Associate Professor, Dept. of Pharmaceutics",
-    src: "/kkcp/web/home/7-kkcp-faculty-prof-s-l-laura-dept-of-pharmaceutics.webp",
   },
 ];
 
 /** Management portraits for the About page message slider, keyed by role. */
 export const MANAGEMENT_PORTRAITS: Record<string, string> = {
-  "Chairman":
+  Chairman:
     "/kkcp/web/about/3-messages-from-the-management-prof-kr-arumugam-m-pharm-chairman-ultra-group-of-institutions.webp",
   "Vice-Chairman":
     "/kkcp/web/about/3-messages-from-the-management-dr-a-babu-thandapani-m-pharm-ph-d-vice-chairman-ultra-group-of-institutions.webp",
-  "Principal":
+  Principal:
     "/kkcp/web/about/3-messages-from-the-management-dr-a-meena-m-pharm-ph-d-principal-k-k-college-of-pharmacy.webp",
-  "Deen of Academics":
+  "Dean of Academics":
     "/kkcp/web/about/3-messages-from-the-management-dr-a-shanthi-m-pharm-ph-d-vice-principal-k-k-college-of-pharmacy.webp",
 };

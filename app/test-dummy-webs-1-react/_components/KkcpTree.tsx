@@ -64,6 +64,7 @@ import { AdmissionsSection } from "./AdmissionsSection";
 // fails here until someone adds ./ImageSlider.tsx or removes both the import
 // and its call site. Left in place so the original intent is not lost.
 import ImageSlider from "./ImageSlider";
+import CourseCard from "./CourseCard";
 
 /**
  * Home-page-only CSS — layer 3 of 3 (see the file header).
@@ -516,12 +517,7 @@ const PAGE_STYLES = `
   .elementor-element-kkcpcoursesc
   .rs-academic-cards.style-two
   .single-item::after {
-  background-image: linear-gradient(
-    180deg,
-    rgba(0, 58, 101, 0) 40%,
-    rgba(0, 58, 101, 0.26) 68%,
-    rgba(0, 58, 101, 0.6) 100%
-  ) !important;
+
 }
 
 /* (a) caption to the bottom-right corner. The card is already a column flex box, so
@@ -598,15 +594,33 @@ const PAGE_STYLES = `
   .kkcp-root
     .elementor-element-kkcpcoursesc
     .rs-academic-cards.style-two
-    .single-item::after {
-    background-image: linear-gradient(
-      180deg,
-      rgba(0, 58, 101, 0) 30%,
-      rgba(0, 58, 101, 0.3) 62%,
-      rgba(0, 58, 101, 0.64) 100%
-    ) !important;
+    
+}
+
+
+.horizontal-animation {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+
+  animation: infiniteSlide 20s linear infinite;
+}
+
+.horizontal-animation .event-post-item {
+  flex: 0 0 auto;
+}
+
+/* Move exactly half of the duplicated content */
+@keyframes infiniteSlide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 10px));
   }
 }
+
 `;
 
 export function KkcpTree() {
@@ -620,7 +634,11 @@ export function KkcpTree() {
       style={{}}
     >
       {" "}
-      <div id="site-preloader" className="kkcp-preloader" style={{ display: "none" }}>
+      <div
+        id="site-preloader"
+        className="kkcp-preloader"
+        style={{ display: "none" }}
+      >
         {" "}
         <div className="loader-container">
           {" "}
@@ -678,7 +696,12 @@ export function KkcpTree() {
                     >
                       <sr7-adjuster style={{ height: "960px" }}></sr7-adjuster>
                       <sr7-content
-                        style={{ height: "960px", left: "0px", width: "1440px", top: "0px" }}
+                        style={{
+                          height: "960px",
+                          left: "0px",
+                          width: "1440px",
+                          top: "0px",
+                        }}
                       >
                         <sr7-slide
                           id="SR7_2_1-4"
@@ -897,7 +920,7 @@ export function KkcpTree() {
                               K.K. College of Pharmacy
                             </sr7-txt>
                           </sr7-mask>
-                          <sr7-img
+                          {/* <sr7-img
                             id="SR7_2_1-4-2"
                             className="sr7-layer"
                             aria-hidden={"true"}
@@ -913,8 +936,8 @@ export function KkcpTree() {
                               display: "block",
                               background:
                                 'url("/test-dummy-webs-1/assets/0115__cap.png") 50% 50% / cover no-repeat transparent',
-                              left: "18px",
-                              top: "697px",
+                              left: "122px",
+                              top: "550px",
                               translate: "none",
                               rotate: "none",
                               scale: "none",
@@ -923,67 +946,17 @@ export function KkcpTree() {
                               transform: "translate(0px, 0px)",
                               pointerEvents: "auto",
                             }}
-                          ></sr7-img>
-                          <sr7-mask
-                            style={{
-                              overflow: "hidden",
-                              width: "auto",
-                              height: "auto",
-                              zIndex: "12",
-                              position: "absolute",
-                              verticalAlign: "top",
-                              display: "block",
-                              visibility: "visible",
-                              left: "1264px",
-                              top: "855px",
-                              translate: "none",
-                              rotate: "none",
-                              scale: "none",
-                              opacity: "1",
-                              transform: "translate(0px, 0px)",
-                            }}
-                          >
-                            <sr7-txt
-                              id="SR7_2_1-4-9"
-                              className="sr7-layer "
-                              aria-hidden={"true"}
-                              style={{
-                                fontFamily: "Bitter",
-                                fontSize: "24px",
-                                fontWeight: "600",
-                                color: "rgb(255, 255, 255)",
-                                textTransform: "none",
-                                textDecoration: "none",
-                                letterSpacing: "1px",
-                                lineHeight: "25px",
-                                textAlign: "left",
-                                whiteSpace: "nowrap",
-                                padding: "0px",
-                                verticalAlign: "top",
-                                transformOrigin: "50% 50%",
-                                width: "auto",
-                                height: "auto",
-                                display: "block",
-                                visibility: "visible",
-                                background: "transparent",
-                                translate: "none",
-                                rotate: "none",
-                                scale: "none",
-                                opacity: "1",
-                                transform: "translate(0px, 0px)",
-                                pointerEvents: "auto",
-                              }}
-                            >
-                              Apply Online
-                              <br />
-                            </sr7-txt>
-                          </sr7-mask>
+                          ></sr7-img> */}
                         </sr7-slide>
                         <sr7-slide
                           id="SR7_2_1-5"
                           data-key={"5"}
                           className="sr7-staticslide sr7-staticslide-high"
-                          style={{ pointerEvents: "none", display: "block", visibility: "visible" }}
+                          style={{
+                            pointerEvents: "none",
+                            display: "block",
+                            visibility: "visible",
+                          }}
                         ></sr7-slide>
                         <sr7-module-shadow className="sr7-shdw-0"></sr7-module-shadow>
                       </sr7-content>
@@ -1021,7 +994,10 @@ export function KkcpTree() {
                       <div className="title-inner">
                         {" "}
                         <span className="sub-text ">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                          >
                             <path d="M5.21484 12.8949V16.6564C5.21484 16.6564 8.82175 15.1537 12.0198 15.1537C15.2178 15.1537 18.8255 16.6564 18.8255 16.6564V12.8424C18.8255 12.8424 15.3844 11.0225 11.9665 11.0225C8.55018 11.021 5.21484 12.8949 5.21484 12.8949Z" />
                             <path d="M22.6467 11.9993L24 11.2716L22.6467 10.5222V10.1666C22.6467 10.1666 23.0278 8.23413 20.862 9.24464C20.7517 9.30465 20.6924 9.36542 20.6684 9.42468L11.7367 4.47119L0 11.1884L4.43211 13.2019V12.5485C4.43211 12.5485 8.15079 10.4607 11.9625 10.4607C15.7734 10.4607 19.6092 12.4899 19.6092 12.4899V13.631L22.0563 12.3167V17.6377H21.2416V19.529L22.3248 18.7803L23.5274 19.529V17.637H22.6467V11.9993ZM22.0555 9.83803V10.1944L21.3413 9.79827C21.6017 9.62573 22.0555 9.38642 22.0555 9.83803ZM21.814 11.9251C21.737 11.9279 21.6603 11.9152 21.5883 11.8877C21.5164 11.8602 21.4507 11.8185 21.3952 11.7651C21.3398 11.7117 21.2956 11.6476 21.2655 11.5768C21.2353 11.5059 21.2198 11.4297 21.2197 11.3527C21.2197 11.2757 21.2351 11.1994 21.2652 11.1285C21.2953 11.0576 21.3393 10.9935 21.3947 10.94C21.4501 10.8865 21.5157 10.8447 21.5876 10.8172C21.6595 10.7896 21.7362 10.7768 21.8132 10.7795C21.9615 10.7848 22.102 10.8474 22.2051 10.9542C22.3082 11.0609 22.3659 11.2035 22.366 11.3519C22.3661 11.5003 22.3086 11.643 22.2056 11.7499C22.1027 11.8568 21.9623 11.9196 21.814 11.9251Z" />
                           </svg>
@@ -1070,109 +1046,41 @@ export function KkcpTree() {
                     <div className="rs-academic-cards style-two">
                       {" "}
                       <div className="grid-wrapper">
-                        <div
-                          className="single-item"
-                          style={{
-                            backgroundImage:
-                              "url(/kkcp/web/home/2-home-page-courses-1-d-pharm.webp)",
-                          }}
-                        >
-                          {" "}
-                          <div className="content-wrapper">
-                            {" "}
-                            <div className="content-inner">
-                              <h4 className="title ">
-                                <a href="/courses/diploma-in-pharmacy/">D. Pharm - 2 years</a>
-                              </h4>{" "}
-                            </div>{" "}
-                          </div>
-                        </div>
-                        <div
-                          className="single-item"
-                          style={{
-                            backgroundImage:
-                              "url(/kkcp/web/home/2-home-page-courses-2-b-pharm.webp)",
-                          }}
-                        >
-                          {" "}
-                          <div className="content-wrapper">
-                            {" "}
-                            <div className="content-inner ">
-                              <h4 className="title ">
-                                <a href="/courses/b-pharm/">B. Pharm - 4 years</a>
-                              </h4>{" "}
-                            </div>{" "}
-                          </div>
-                        </div>
-                        <div
-                          className="single-item"
-                          style={{
-                            backgroundImage:
-                              "url(/kkcp/web/home/2-home-page-courses-3-m-pharm.webp)",
-                          }}
-                        >
-                          {" "}
-                          <div className="content-wrapper">
-                            {" "}
-                            <div className="content-inner">
-                              <h4 className="title ">
-                                <a href="/courses/m-pharm/">M. Pharm - 2 Years</a>
-                              </h4>{" "}
-                            </div>{" "}
-                          </div>
-                        </div>
-                        <div
-                          className="single-item"
-                          style={{
-                            backgroundImage:
-                              "url(/kkcp/web/home/2-home-page-courses-4-pharm-d.webp)",
-                          }}
-                        >
-                          {" "}
-                          <div className="content-wrapper">
-                            {" "}
-                            <div className="content-inner">
-                              <h4 className="title ">
-                                <a href="/courses/doctor-of-pharmacy/">Pharm. D - 6 Years</a>
-                              </h4>{" "}
-                            </div>{" "}
-                          </div>
-                        </div>
-                        <div
-                          className="single-item"
-                          style={{
-                            backgroundImage:
-                              "url(/kkcp/web/home/2-home-page-courses-5-pharm-d-pb.webp)",
-                          }}
-                        >
-                          {" "}
-                          <div className="content-wrapper">
-                            {" "}
-                            <div className="content-inner">
-                              <h4 className="title ">
-                                <a href="/doctor-of-pharmacypb/">Pharm. D (PB) - 3 Years</a>
-                              </h4>{" "}
-                            </div>{" "}
-                          </div>
-                        </div>
-                        <div
-                          className="single-item"
-                          style={{
-                            backgroundImage: "url(/test-dummy-webs-1/assets/0143__acc-14-min.webp)",
-                          }}
-                        >
-                          {" "}
-                          <div className="content-wrapper">
-                            {" "}
-                            <div className="content-inner">
-                              <h4 className="title">
-                                <a href="/courses/recognized-phd-research-centre/">
-                                  Recognized Ph.D Research Centre
-                                </a>
-                              </h4>{" "}
-                            </div>{" "}
-                          </div>
-                        </div>
+                        <CourseCard
+                          title="D. Pharm - 2 years"
+                          href="/courses/diploma-in-pharmacy/"
+                          image="/kkcp/web/home/2-home-page-courses-1-d-pharm.webp"
+                        />
+
+                        <CourseCard
+                          title="B. Pharm - 4 years"
+                          href="/courses/b-pharm/"
+                          image="/kkcp/web/home/2-home-page-courses-2-b-pharm.webp"
+                        />
+
+                        <CourseCard
+                          title="M. Pharm - 2 years"
+                          href="/courses/m-pharm/"
+                          image="/kkcp/web/home/2-home-page-courses-3-m-pharm.webp"
+                        />
+
+                        <CourseCard
+                          title="Pharm. D - 6 Years"
+                          href="/courses/doctor-of-pharmacy/"
+                          image="/kkcp/web/home/2-home-page-courses-4-pharm-d.webp"
+                        />
+
+                        <CourseCard
+                          title="Pharm. D (PB) - 3 Years"
+                          href="/courses/doctor-of-pharmacypb/"
+                          image="/kkcp/web/home/2-home-page-courses-5-pharm-d-pb.webp"
+                        />
+
+                        <CourseCard
+                          title=" Recognized Ph.D Research Centre"
+                          href="/courses/recognized-phd-research-centre/"
+                          image="/test-dummy-webs-1/assets/0143__acc-14-min.webp"
+                        />
                       </div>{" "}
                     </div>
                   </div>
@@ -1286,7 +1194,10 @@ export function KkcpTree() {
                           <div className="title-inner">
                             {" "}
                             <span className="sub-text ">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                              >
                                 <path d="M5.21484 12.8949V16.6564C5.21484 16.6564 8.82175 15.1537 12.0198 15.1537C15.2178 15.1537 18.8255 16.6564 18.8255 16.6564V12.8424C18.8255 12.8424 15.3844 11.0225 11.9665 11.0225C8.55018 11.021 5.21484 12.8949 5.21484 12.8949Z" />
                                 <path d="M22.6467 11.9993L24 11.2716L22.6467 10.5222V10.1666C22.6467 10.1666 23.0278 8.23413 20.862 9.24464C20.7517 9.30465 20.6924 9.36542 20.6684 9.42468L11.7367 4.47119L0 11.1884L4.43211 13.2019V12.5485C4.43211 12.5485 8.15079 10.4607 11.9625 10.4607C15.7734 10.4607 19.6092 12.4899 19.6092 12.4899V13.631L22.0563 12.3167V17.6377H21.2416V19.529L22.3248 18.7803L23.5274 19.529V17.637H22.6467V11.9993ZM22.0555 9.83803V10.1944L21.3413 9.79827C21.6017 9.62573 22.0555 9.38642 22.0555 9.83803ZM21.814 11.9251C21.737 11.9279 21.6603 11.9152 21.5883 11.8877C21.5164 11.8602 21.4507 11.8185 21.3952 11.7651C21.3398 11.7117 21.2956 11.6476 21.2655 11.5768C21.2353 11.5059 21.2198 11.4297 21.2197 11.3527C21.2197 11.2757 21.2351 11.1994 21.2652 11.1285C21.2953 11.0576 21.3393 10.9935 21.3947 10.94C21.4501 10.8865 21.5157 10.8447 21.5876 10.8172C21.6595 10.7896 21.7362 10.7768 21.8132 10.7795C21.9615 10.7848 22.102 10.8474 22.2051 10.9542C22.3082 11.0609 22.3659 11.2035 22.366 11.3519C22.3661 11.5003 22.3086 11.643 22.2056 11.7499C22.1027 11.8568 21.9623 11.9196 21.814 11.9251Z" />
                               </svg>
@@ -1299,7 +1210,12 @@ export function KkcpTree() {
                               data-delay={"0.02"}
                               style={{ perspective: "400px" }}
                             >
-                              <div style={{ position: "relative", display: "inline-block" }}>
+                              <div
+                                style={{
+                                  position: "relative",
+                                  display: "inline-block",
+                                }}
+                              >
                                 <div
                                   style={{
                                     position: "relative",
@@ -1401,7 +1317,12 @@ export function KkcpTree() {
                                   g
                                 </div>
                               </div>{" "}
-                              <div style={{ position: "relative", display: "inline-block" }}>
+                              <div
+                                style={{
+                                  position: "relative",
+                                  display: "inline-block",
+                                }}
+                              >
                                 <div
                                   style={{
                                     position: "relative",
@@ -1483,7 +1404,12 @@ export function KkcpTree() {
                                   s
                                 </div>
                               </div>{" "}
-                              <div style={{ position: "relative", display: "inline-block" }}>
+                              <div
+                                style={{
+                                  position: "relative",
+                                  display: "inline-block",
+                                }}
+                              >
                                 <div
                                   style={{
                                     position: "relative",
@@ -1505,7 +1431,12 @@ export function KkcpTree() {
                                   o
                                 </div>
                               </div>{" "}
-                              <div style={{ position: "relative", display: "inline-block" }}>
+                              <div
+                                style={{
+                                  position: "relative",
+                                  display: "inline-block",
+                                }}
+                              >
                                 <div
                                   style={{
                                     position: "relative",
@@ -1547,7 +1478,12 @@ export function KkcpTree() {
                                   d
                                 </div>
                               </div>{" "}
-                              <div style={{ position: "relative", display: "inline-block" }}>
+                              <div
+                                style={{
+                                  position: "relative",
+                                  display: "inline-block",
+                                }}
+                              >
                                 <div
                                   style={{
                                     position: "relative",
@@ -1579,7 +1515,12 @@ export function KkcpTree() {
                                   e
                                 </div>
                               </div>{" "}
-                              <div style={{ position: "relative", display: "inline-block" }}>
+                              <div
+                                style={{
+                                  position: "relative",
+                                  display: "inline-block",
+                                }}
+                              >
                                 <div
                                   style={{
                                     position: "relative",
@@ -1644,9 +1585,10 @@ export function KkcpTree() {
                             </h2>{" "}
                           </div>{" "}
                           <div className="descripti">
-                            K.K. College of Pharmacy, established in 1992, offers World-Class
-                            Pharmacy education. Our experienced faculty, state-of-the-art
-                            laboratories and strong interface ensure graduates are ready for
+                            K.K. College of Pharmacy, established in 1992,
+                            offers World-Class Pharmacy education. Our
+                            experienced faculty, state-of-the-art laboratories
+                            and strong interface ensure graduates are ready for
                             successful careers in Pharmaceutical Sciences.{" "}
                           </div>{" "}
                         </div>
@@ -1774,8 +1716,8 @@ export function KkcpTree() {
                                   </h4>{" "}
                                   <p className="desc">
                                     {" "}
-                                    Three decades of excellence in Pharmaceutical Education and
-                                    Research.
+                                    Three decades of excellence in
+                                    Pharmaceutical Education and Research.
                                   </p>{" "}
                                 </div>{" "}
                               </div>{" "}
@@ -1799,7 +1741,10 @@ export function KkcpTree() {
                           {" "}
                           <span className="button-icon">
                             {" "}
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 15">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 18 15"
+                            >
                               <path d="M10.5 7.5C10.5 8.32843 9.82843 9 9 9C8.17157 9 7.5 8.32843 7.5 7.5C7.5 6.67157 8.17157 6 9 6C9.82843 6 10.5 6.67157 10.5 7.5Z" />
                               <path d="M10.5 13.5C10.5 14.3284 9.82843 15 9 15C8.17157 15 7.5 14.3284 7.5 13.5C7.5 12.6716 8.17157 12 9 12C9.82843 12 10.5 12.6716 10.5 13.5Z" />
                               <path d="M3 7.5C3 8.32843 2.32843 9 1.5 9C0.671573 9 0 8.32843 0 7.5C0 6.67157 0.671573 6 1.5 6C2.32843 6 3 6.67157 3 7.5Z" />
@@ -1807,7 +1752,10 @@ export function KkcpTree() {
                               <path d="M10.5 1.5C10.5 2.32843 9.82843 3 9 3C8.17157 3 7.5 2.32843 7.5 1.5C7.5 0.671573 8.17157 0 9 0C9.82843 0 10.5 0.671573 10.5 1.5Z" />
                             </svg>{" "}
                           </span>{" "}
-                          <span className="button-text" data-text={"More About Us"}>
+                          <span
+                            className="button-text"
+                            data-text={"More About Us"}
+                          >
                             More About Us{" "}
                           </span>{" "}
                         </a>
@@ -1901,7 +1849,10 @@ export function KkcpTree() {
                           <div className="title-inner">
                             {" "}
                             <span className="sub-text ">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                              >
                                 <path d="M5.21484 12.8949V16.6564C5.21484 16.6564 8.82175 15.1537 12.0198 15.1537C15.2178 15.1537 18.8255 16.6564 18.8255 16.6564V12.8424C18.8255 12.8424 15.3844 11.0225 11.9665 11.0225C8.55018 11.021 5.21484 12.8949 5.21484 12.8949Z" />
                                 <path d="M22.6467 11.9993L24 11.2716L22.6467 10.5222V10.1666C22.6467 10.1666 23.0278 8.23413 20.862 9.24464C20.7517 9.30465 20.6924 9.36542 20.6684 9.42468L11.7367 4.47119L0 11.1884L4.43211 13.2019V12.5485C4.43211 12.5485 8.15079 10.4607 11.9625 10.4607C15.7734 10.4607 19.6092 12.4899 19.6092 12.4899V13.631L22.0563 12.3167V17.6377H21.2416V19.529L22.3248 18.7803L23.5274 19.529V17.637H22.6467V11.9993ZM22.0555 9.83803V10.1944L21.3413 9.79827C21.6017 9.62573 22.0555 9.38642 22.0555 9.83803ZM21.814 11.9251C21.737 11.9279 21.6603 11.9152 21.5883 11.8877C21.5164 11.8602 21.4507 11.8185 21.3952 11.7651C21.3398 11.7117 21.2956 11.6476 21.2655 11.5768C21.2353 11.5059 21.2198 11.4297 21.2197 11.3527C21.2197 11.2757 21.2351 11.1994 21.2652 11.1285C21.2953 11.0576 21.3393 10.9935 21.3947 10.94C21.4501 10.8865 21.5157 10.8447 21.5876 10.8172C21.6595 10.7896 21.7362 10.7768 21.8132 10.7795C21.9615 10.7848 22.102 10.8474 22.2051 10.9542C22.3082 11.0609 22.3659 11.2035 22.366 11.3519C22.3661 11.5003 22.3086 11.643 22.2056 11.7499C22.1027 11.8568 21.9623 11.9196 21.814 11.9251Z" />
                               </svg>
@@ -1971,7 +1922,9 @@ export function KkcpTree() {
                                 </p>{" "}
                                 <p>
                                   <strong>
-                                    <a href="/drug-information-centre/">Know more</a>
+                                    <a href="/drug-information-centre/">
+                                      Know more
+                                    </a>
                                   </strong>
                                 </p>{" "}
                               </div>{" "}
@@ -2002,7 +1955,10 @@ export function KkcpTree() {
                               <div className="notice-bottom">
                                 {" "}
                                 <a href="#" className="file-link">
-                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20"
+                                  >
                                     <path d="M13.6306 8.65779V4.87288C13.6306 4.76456 13.5806 4.66444 13.5098 4.58526L9.26635 0.129258C9.18709 0.0459374 9.07455 0 8.96205 0H2.23421C0.992107 0 0 1.01289 0 2.25507V14.9771C0 16.2193 0.992107 17.2156 2.23418 17.2156H7.54483C8.54932 18.8829 10.3752 20 12.4551 20C15.6147 20 18.195 17.4322 18.195 14.2684C18.1993 11.5048 16.215 9.19553 13.6306 8.65783V8.65779ZM9.37897 1.4632L12.2259 4.46019H10.3793C9.82908 4.46019 9.37893 4.00589 9.37893 3.4557L9.37897 1.4632ZM2.23418 16.3818C1.45476 16.3818 0.833748 15.7565 0.833748 14.9771V2.25507C0.833748 1.4714 1.45476 0.833748 2.23418 0.833748H8.54522V3.45562C8.54522 4.46851 9.36643 5.2939 10.3793 5.2939H12.7969V8.54936C12.6719 8.54522 12.5719 8.53268 12.4635 8.53268C11.0087 8.53268 9.67068 9.09131 8.66194 9.9667H3.36808C3.13874 9.9667 2.95121 10.1542 2.95121 10.3834C2.95121 10.6128 3.13871 10.8003 3.36808 10.8003H7.88663C7.59061 11.2172 7.34463 11.634 7.15303 12.0926H3.36804C3.13871 12.0926 2.95117 12.2801 2.95117 12.5094C2.95117 12.7386 3.13867 12.9263 3.36804 12.9263H6.88198C6.77776 13.3432 6.72358 13.8058 6.72358 14.2685C6.72358 15.0187 6.86944 15.7608 7.13206 16.3861H2.23418V16.3818ZM12.4594 19.1705C9.75826 19.1705 7.56147 16.9737 7.56147 14.2726C7.56147 11.5715 9.75404 9.37467 12.4594 9.37467C15.1646 9.37467 17.3572 11.5715 17.3572 14.2726C17.3572 16.9737 15.1605 19.1705 12.4594 19.1705Z" />
                                     <path d="M3.36805 8.71188H7.59059C7.81992 8.71188 8.00746 8.52423 8.00746 8.29501C8.00746 8.06571 7.81996 7.87817 7.59059 7.87817H3.36805C3.13871 7.87817 2.95117 8.06567 2.95117 8.29501C2.95117 8.52423 3.13867 8.71188 3.36805 8.71188ZM14.5935 14.1849L12.8804 16.0315V11.4797C12.8804 11.2504 12.6927 11.0628 12.4635 11.0628C12.2342 11.0628 12.0466 11.2503 12.0466 11.4797V16.0315L10.3209 14.1849C10.1625 14.0183 9.89574 14.0058 9.72898 14.1642C9.56219 14.3225 9.54969 14.5852 9.7082 14.7519L12.1467 17.3738C12.2259 17.4572 12.3342 17.5072 12.451 17.5072C12.5677 17.5072 12.676 17.4572 12.7552 17.3738L15.198 14.752C15.3564 14.5852 15.348 14.3184 15.1812 14.1642C15.0104 14.0058 14.752 14.0183 14.5935 14.1849Z" />
                                   </svg>{" "}
@@ -2017,7 +1973,10 @@ export function KkcpTree() {
                               <div className="notice-bottom">
                                 {" "}
                                 <a href="#" className="file-link">
-                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20"
+                                  >
                                     <path d="M13.6306 8.65779V4.87288C13.6306 4.76456 13.5806 4.66444 13.5098 4.58526L9.26635 0.129258C9.18709 0.0459374 9.07455 0 8.96205 0H2.23421C0.992107 0 0 1.01289 0 2.25507V14.9771C0 16.2193 0.992107 17.2156 2.23418 17.2156H7.54483C8.54932 18.8829 10.3752 20 12.4551 20C15.6147 20 18.195 17.4322 18.195 14.2684C18.1993 11.5048 16.215 9.19553 13.6306 8.65783V8.65779ZM9.37897 1.4632L12.2259 4.46019H10.3793C9.82908 4.46019 9.37893 4.00589 9.37893 3.4557L9.37897 1.4632ZM2.23418 16.3818C1.45476 16.3818 0.833748 15.7565 0.833748 14.9771V2.25507C0.833748 1.4714 1.45476 0.833748 2.23418 0.833748H8.54522V3.45562C8.54522 4.46851 9.36643 5.2939 10.3793 5.2939H12.7969V8.54936C12.6719 8.54522 12.5719 8.53268 12.4635 8.53268C11.0087 8.53268 9.67068 9.09131 8.66194 9.9667H3.36808C3.13874 9.9667 2.95121 10.1542 2.95121 10.3834C2.95121 10.6128 3.13871 10.8003 3.36808 10.8003H7.88663C7.59061 11.2172 7.34463 11.634 7.15303 12.0926H3.36804C3.13871 12.0926 2.95117 12.2801 2.95117 12.5094C2.95117 12.7386 3.13867 12.9263 3.36804 12.9263H6.88198C6.77776 13.3432 6.72358 13.8058 6.72358 14.2685C6.72358 15.0187 6.86944 15.7608 7.13206 16.3861H2.23418V16.3818ZM12.4594 19.1705C9.75826 19.1705 7.56147 16.9737 7.56147 14.2726C7.56147 11.5715 9.75404 9.37467 12.4594 9.37467C15.1646 9.37467 17.3572 11.5715 17.3572 14.2726C17.3572 16.9737 15.1605 19.1705 12.4594 19.1705Z" />
                                     <path d="M3.36805 8.71188H7.59059C7.81992 8.71188 8.00746 8.52423 8.00746 8.29501C8.00746 8.06571 7.81996 7.87817 7.59059 7.87817H3.36805C3.13871 7.87817 2.95117 8.06567 2.95117 8.29501C2.95117 8.52423 3.13867 8.71188 3.36805 8.71188ZM14.5935 14.1849L12.8804 16.0315V11.4797C12.8804 11.2504 12.6927 11.0628 12.4635 11.0628C12.2342 11.0628 12.0466 11.2503 12.0466 11.4797V16.0315L10.3209 14.1849C10.1625 14.0183 9.89574 14.0058 9.72898 14.1642C9.56219 14.3225 9.54969 14.5852 9.7082 14.7519L12.1467 17.3738C12.2259 17.4572 12.3342 17.5072 12.451 17.5072C12.5677 17.5072 12.676 17.4572 12.7552 17.3738L15.198 14.752C15.3564 14.5852 15.348 14.3184 15.1812 14.1642C15.0104 14.0058 14.752 14.0183 14.5935 14.1849Z" />
                                   </svg>{" "}
@@ -2026,11 +1985,16 @@ export function KkcpTree() {
                             </div>{" "}
                             <div className="notice-item">
                               {" "}
-                              <h5 className="notice-title">Admissions Open for 2026-2027</h5>{" "}
+                              <h5 className="notice-title">
+                                Admissions Open for 2026-2027
+                              </h5>{" "}
                               <div className="notice-bottom">
                                 {" "}
                                 <a href="#" className="file-link">
-                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20"
+                                  >
                                     <path d="M13.6306 8.65779V4.87288C13.6306 4.76456 13.5806 4.66444 13.5098 4.58526L9.26635 0.129258C9.18709 0.0459374 9.07455 0 8.96205 0H2.23421C0.992107 0 0 1.01289 0 2.25507V14.9771C0 16.2193 0.992107 17.2156 2.23418 17.2156H7.54483C8.54932 18.8829 10.3752 20 12.4551 20C15.6147 20 18.195 17.4322 18.195 14.2684C18.1993 11.5048 16.215 9.19553 13.6306 8.65783V8.65779ZM9.37897 1.4632L12.2259 4.46019H10.3793C9.82908 4.46019 9.37893 4.00589 9.37893 3.4557L9.37897 1.4632ZM2.23418 16.3818C1.45476 16.3818 0.833748 15.7565 0.833748 14.9771V2.25507C0.833748 1.4714 1.45476 0.833748 2.23418 0.833748H8.54522V3.45562C8.54522 4.46851 9.36643 5.2939 10.3793 5.2939H12.7969V8.54936C12.6719 8.54522 12.5719 8.53268 12.4635 8.53268C11.0087 8.53268 9.67068 9.09131 8.66194 9.9667H3.36808C3.13874 9.9667 2.95121 10.1542 2.95121 10.3834C2.95121 10.6128 3.13871 10.8003 3.36808 10.8003H7.88663C7.59061 11.2172 7.34463 11.634 7.15303 12.0926H3.36804C3.13871 12.0926 2.95117 12.2801 2.95117 12.5094C2.95117 12.7386 3.13867 12.9263 3.36804 12.9263H6.88198C6.77776 13.3432 6.72358 13.8058 6.72358 14.2685C6.72358 15.0187 6.86944 15.7608 7.13206 16.3861H2.23418V16.3818ZM12.4594 19.1705C9.75826 19.1705 7.56147 16.9737 7.56147 14.2726C7.56147 11.5715 9.75404 9.37467 12.4594 9.37467C15.1646 9.37467 17.3572 11.5715 17.3572 14.2726C17.3572 16.9737 15.1605 19.1705 12.4594 19.1705Z" />
                                     <path d="M3.36805 8.71188H7.59059C7.81992 8.71188 8.00746 8.52423 8.00746 8.29501C8.00746 8.06571 7.81996 7.87817 7.59059 7.87817H3.36805C3.13871 7.87817 2.95117 8.06567 2.95117 8.29501C2.95117 8.52423 3.13867 8.71188 3.36805 8.71188ZM14.5935 14.1849L12.8804 16.0315V11.4797C12.8804 11.2504 12.6927 11.0628 12.4635 11.0628C12.2342 11.0628 12.0466 11.2503 12.0466 11.4797V16.0315L10.3209 14.1849C10.1625 14.0183 9.89574 14.0058 9.72898 14.1642C9.56219 14.3225 9.54969 14.5852 9.7082 14.7519L12.1467 17.3738C12.2259 17.4572 12.3342 17.5072 12.451 17.5072C12.5677 17.5072 12.676 17.4572 12.7552 17.3738L15.198 14.752C15.3564 14.5852 15.348 14.3184 15.1812 14.1642C15.0104 14.0058 14.752 14.0183 14.5935 14.1849Z" />
                                   </svg>{" "}
@@ -2115,7 +2079,9 @@ export function KkcpTree() {
                                   />
                                 </svg>
                               </span>
-                              <span className="e-n-tab-title-text">Our Departments </span>
+                              <span className="e-n-tab-title-text">
+                                Our Departments{" "}
+                              </span>
                             </button>
                             <button
                               id="e-n-tab-title-222482852"
@@ -2160,7 +2126,9 @@ export function KkcpTree() {
                                   </defs>
                                 </svg>
                               </span>
-                              <span className="e-n-tab-title-text">Research</span>
+                              <span className="e-n-tab-title-text">
+                                Research
+                              </span>
                             </button>
                             <button
                               id="e-n-tab-title-222482853"
@@ -2191,7 +2159,9 @@ export function KkcpTree() {
                                   <path d="M27.0621 25.0979C27.0621 24.1587 27.396 23.2423 28.0024 22.5174C28.0597 22.449 28.0962 22.3657 28.1078 22.2773C28.1193 22.1888 28.1054 22.099 28.0676 22.0182C28.0299 21.9374 27.9699 21.869 27.8946 21.8211C27.8194 21.7732 27.7321 21.7478 27.6429 21.7478H25.7081C24.1514 18.4465 21.1804 16.0888 17.7104 15.272C19.7835 14.2633 21.2158 12.1355 21.2158 9.67932C21.2158 9.39807 21.1964 9.11682 21.1589 8.83914C21.2303 8.75466 21.2694 8.6476 21.2694 8.53698V4.26379L22.5011 3.93661V7.29936L21.7603 7.72704C21.6891 7.76817 21.6299 7.82734 21.5887 7.8986C21.5476 7.96985 21.5259 8.05069 21.526 8.13297V11.107C21.526 11.1941 21.5503 11.2795 21.5961 11.3535C21.6419 11.4276 21.7074 11.4874 21.7854 11.5263C21.8633 11.5652 21.9505 11.5817 22.0372 11.5738C22.124 11.5659 22.2068 11.534 22.2764 11.4817L22.9698 10.9602L23.6632 11.4817C23.7328 11.534 23.8157 11.566 23.9024 11.5739C23.9892 11.5818 24.0764 11.5654 24.1543 11.5265C24.2323 11.4876 24.2978 11.4277 24.3436 11.3536C24.3895 11.2795 24.4137 11.1941 24.4137 11.107V8.13297C24.4137 8.05069 24.392 7.96985 24.3509 7.8986C24.3098 7.82734 24.2506 7.76817 24.1793 7.72704L23.4386 7.29936V3.68758L23.6033 3.64381C23.8088 3.58926 23.9517 3.40334 23.9517 3.19077C23.9517 2.97819 23.8088 2.79227 23.6033 2.73772L15.1206 0.484437C15.0418 0.463521 14.9588 0.463521 14.88 0.484437L6.39717 2.73772C6.19174 2.79227 6.04877 2.97819 6.04877 3.19077C6.04877 3.40334 6.19174 3.58926 6.39717 3.64381L8.73113 4.26379V8.53709C8.73113 8.65123 8.77232 8.75705 8.84164 8.83926C8.80414 9.11694 8.7848 9.39819 8.7848 9.67944C8.7848 12.135 10.2163 14.2624 12.2885 15.2714C10.5249 15.6857 8.88011 16.4996 7.48085 17.6501C6.08158 18.8007 4.96525 20.2572 4.21795 21.9075C2.86848 22.3403 1.88867 23.6066 1.88867 25.0979C1.88867 26.9451 3.39143 28.4479 5.23865 28.4479H5.74883V29.0403C5.74883 29.1253 5.77197 29.2088 5.81577 29.2817C5.85958 29.3546 5.92238 29.4142 5.99747 29.4541C6.07256 29.4941 6.1571 29.5128 6.24203 29.5084C6.32697 29.5039 6.40909 29.4765 6.47961 29.4289L7.7668 28.5612L9.18687 29.4588C9.25777 29.5036 9.33939 29.5285 9.42322 29.5311C9.50705 29.5336 9.59003 29.5135 9.66348 29.473C9.73695 29.4326 9.79821 29.3731 9.84088 29.3009C9.88354 29.2287 9.90605 29.1464 9.90605 29.0625V28.4478H27.643C27.7321 28.4478 27.8195 28.4224 27.8947 28.3745C27.9699 28.3266 28.03 28.2583 28.0677 28.1775C28.1054 28.0967 28.1194 28.0068 28.1078 27.9184C28.0963 27.83 28.0597 27.7467 28.0025 27.6783C27.3961 26.9534 27.0621 26.037 27.0621 25.0979ZM23.4761 10.1681L23.2515 9.99912C23.168 9.93643 23.069 9.90502 22.9698 9.90502C22.8706 9.90502 22.7715 9.93643 22.688 9.99912L22.4634 10.1681V8.40362L22.9698 8.11129L23.4761 8.40362V10.1681ZM15.0003 1.42246L21.6571 3.19077L15.0003 4.95907L8.34336 3.19077L15.0003 1.42246ZM14.8799 5.89709C14.9588 5.91808 15.0417 5.91808 15.1206 5.89709L20.3319 4.51282V8.14668C19.5113 8.29856 18.8211 8.43198 18.2517 8.54208C15.0002 9.17061 15.0003 9.17061 11.7488 8.54208C11.1794 8.43198 10.4892 8.29856 9.66863 8.14668V4.51282L14.8799 5.89709ZM9.7223 9.67938C9.7223 9.491 9.73326 9.30274 9.75301 9.11588C10.3594 9.2293 10.9653 9.34482 11.5709 9.46247C13.2695 9.79082 14.1349 9.955 15.0002 9.955C15.8655 9.955 16.7309 9.79082 18.4295 9.46247C18.937 9.36438 19.5413 9.24754 20.2474 9.11588C20.2672 9.30268 20.2781 9.49094 20.2781 9.67938C20.2781 12.5893 17.9111 14.9567 15.0014 14.9574H14.9988C12.0893 14.9567 9.7223 12.5893 9.7223 9.67938ZM14.999 15.8949H15.0015C19.0766 15.8954 22.7921 18.17 24.6616 21.7479H5.33809C7.20711 18.1674 10.9152 15.8954 14.999 15.8949ZM6.21758 24.6291C6.09326 24.6291 5.97403 24.6785 5.88612 24.7664C5.79821 24.8543 5.74883 24.9735 5.74883 25.0979V27.5103H5.23865C3.9084 27.5103 2.82617 26.4281 2.82617 25.0979C2.82617 23.7676 3.9084 22.6854 5.23865 22.6854H26.754C26.4197 23.2844 26.213 23.9462 26.1471 24.6291H6.21758ZM8.96861 28.2117L8.00897 27.6051C7.93204 27.5565 7.84261 27.5313 7.7516 27.5326C7.66059 27.534 7.57195 27.5618 7.4965 27.6128L6.68639 28.1589V25.5666H8.96861V28.2117ZM9.90611 27.5103V25.5666H26.1472C26.2131 26.2495 26.4197 26.9113 26.754 27.5103H9.90611Z" />
                                 </svg>
                               </span>
-                              <span className="e-n-tab-title-text">Our Tie Up Hospital</span>
+                              <span className="e-n-tab-title-text">
+                                Tie-Up Hospital
+                              </span>
                             </button>
                           </div>
                           <div className="e-n-tabs-content">
@@ -2231,7 +2201,9 @@ export function KkcpTree() {
                                         {" "}
                                         <div className="content-inner">
                                           <h4 className="title">
-                                            <a href="/departments/pharmaceutics/">Pharmaceutics</a>
+                                            <a href="/departments/pharmaceutics/">
+                                              Pharmaceutics
+                                            </a>
                                           </h4>{" "}
                                         </div>{" "}
                                       </div>
@@ -2267,7 +2239,9 @@ export function KkcpTree() {
                                         {" "}
                                         <div className="content-inner">
                                           <h4 className="title">
-                                            <a href="/departments/pharmacology/">Pharmacology</a>
+                                            <a href="/departments/pharmacology/">
+                                              Pharmacology
+                                            </a>
                                           </h4>{" "}
                                         </div>{" "}
                                       </div>
@@ -2284,7 +2258,9 @@ export function KkcpTree() {
                                         {" "}
                                         <div className="content-inner">
                                           <h4 className="title">
-                                            <a href="/departments/pharmacognosy/">Pharmacognosy</a>
+                                            <a href="/departments/pharmacognosy/">
+                                              Pharmacognosy
+                                            </a>
                                           </h4>{" "}
                                         </div>{" "}
                                       </div>
@@ -2349,8 +2325,9 @@ export function KkcpTree() {
                                         <div className="content-inner">
                                           <h4 className="title">
                                             <a href="/research/">
-                                              The Tamil Nadu Dr. M.G.R. Medical University
-                                              Recognized Ph.D. Research Centre
+                                              The Tamil Nadu Dr. M.G.R. Medical
+                                              University Recognized Ph.D.
+                                              Research Centre
                                             </a>
                                           </h4>{" "}
                                         </div>{" "}
@@ -2369,8 +2346,9 @@ export function KkcpTree() {
                                         <div className="content-inner">
                                           <h4 className="title">
                                             <a href="/research/">
-                                              PCI approved New Courses M.Pharm Pharmacy Practice
-                                              &amp; M.Pharm Regulatory Affairs
+                                              PCI approved New Courses M.Pharm
+                                              Pharmacy Practice &amp; M.Pharm
+                                              Regulatory Affairs
                                             </a>
                                           </h4>{" "}
                                         </div>{" "}
@@ -2388,7 +2366,9 @@ export function KkcpTree() {
                                         {" "}
                                         <div className="content-inner">
                                           <h4 className="title">
-                                            <a href="/research/">Admissions Open for 2026-2027</a>
+                                            <a href="/research/">
+                                              Admissions Open for 2026-2027
+                                            </a>
                                           </h4>{" "}
                                         </div>{" "}
                                       </div>
@@ -2429,37 +2409,53 @@ export function KkcpTree() {
                                       />
                                     </div>{" "}
                                     <div className="kkcp-tieup-body">
-                                      <h4>Our Hospital Tie up kamakshi memorial hospital</h4>
-                                      <p>
-                                        Dr. Kamakshi Memorial Hospital is a renowned 300-bed
-                                        tertiary care healthcare institution located at
-                                        Pallikaranai, Chennai. With a team of over 150 experienced
-                                        consultants and a built-up area of approximately 1,80,000
-                                        sq.ft, the hospital delivers comprehensive and specialized
-                                        healthcare services. The hospital is equipped with advanced
-                                        medical facilities and offers expertise across a wide range
-                                        of specialities, including Cardiology, Gastroenterology,
-                                        Nephrology, Neurology, Obstetrics &amp; Gynaecology,
-                                        Orthopaedics, Paediatrics, Pulmonology, Rheumatology,
-                                        Oncology, and Transplantation Services.
+                                      <h4>
+                                        Our Tie-Up Hospital <br /> Dr. Kamakshi
+                                        Memorial Hospital
+                                      </h4>
+                                      <p className="text-justify">
+                                        Dr. Kamakshi Memorial Hospital is a
+                                        renowned 300-bed tertiary care
+                                        healthcare institution located at
+                                        Pallikaranai, Chennai. With a team of
+                                        over 150 experienced consultants and a
+                                        built-up area of approximately 1,80,000
+                                        sq.ft, the hospital delivers
+                                        comprehensive and specialized healthcare
+                                        services. The hospital is equipped with
+                                        advanced medical facilities and offers
+                                        expertise across a wide range of
+                                        specialities, including Cardiology,
+                                        Gastroenterology, Nephrology, Neurology,
+                                        Obstetrics &amp; Gynaecology,
+                                        Orthopaedics, Paediatrics, Pulmonology,
+                                        Rheumatology, Oncology, and
+                                        Transplantation Services.
                                       </p>
                                       <p>
-                                        Our college has established academic collaborations with the
-                                        hospital through formal Memoranda of Understanding (MoUs)
-                                        and institutional tie-ups, facilitating clinical education
-                                        and professional training opportunities for students.
+                                        Our college has established academic
+                                        collaborations with the hospital through
+                                        formal Memoranda of Understanding (MoUs)
+                                        and institutional tie-ups, facilitating
+                                        clinical education and professional
+                                        training opportunities for students.
                                       </p>
                                       <p>
-                                        The hospital also serves as an important clinical training
-                                        site for Pharm.D and M.Pharm students, offering extensive
-                                        exposure to diverse healthcare settings. Our students
-                                        actively participate in academic and clinical research
-                                        projects across various departments, including Oncology,
-                                        Emergency Medicine, and Intensive Care Units (ICUs) during
-                                        their fifth and sixth year. This hands-on training
-                                        environment enables students to enhance their clinical
-                                        knowledge, develop patient-care skills, and gain valuable
-                                        experience in multidisciplinary healthcare practice.
+                                        The hospital also serves as an important
+                                        clinical training site for Pharm.D and
+                                        M.Pharm students, offering extensive
+                                        exposure to diverse healthcare settings.
+                                        Our students actively participate in
+                                        academic and clinical research projects
+                                        across various departments, including
+                                        Oncology, Emergency Medicine, and
+                                        Intensive Care Units (ICUs) during their
+                                        fifth and sixth year. This hands-on
+                                        training environment enables students to
+                                        enhance their clinical knowledge,
+                                        develop patient-care skills, and gain
+                                        valuable experience in multidisciplinary
+                                        healthcare practice.
                                       </p>
                                     </div>{" "}
                                   </div>{" "}
@@ -2514,7 +2510,10 @@ export function KkcpTree() {
                           <div className="title-inner">
                             {" "}
                             <span className="sub-text ">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                              >
                                 <path d="M5.21484 12.8949V16.6564C5.21484 16.6564 8.82175 15.1537 12.0198 15.1537C15.2178 15.1537 18.8255 16.6564 18.8255 16.6564V12.8424C18.8255 12.8424 15.3844 11.0225 11.9665 11.0225C8.55018 11.021 5.21484 12.8949 5.21484 12.8949Z" />
                                 <path d="M22.6467 11.9993L24 11.2716L22.6467 10.5222V10.1666C22.6467 10.1666 23.0278 8.23413 20.862 9.24464C20.7517 9.30465 20.6924 9.36542 20.6684 9.42468L11.7367 4.47119L0 11.1884L4.43211 13.2019V12.5485C4.43211 12.5485 8.15079 10.4607 11.9625 10.4607C15.7734 10.4607 19.6092 12.4899 19.6092 12.4899V13.631L22.0563 12.3167V17.6377H21.2416V19.529L22.3248 18.7803L23.5274 19.529V17.637H22.6467V11.9993ZM22.0555 9.83803V10.1944L21.3413 9.79827C21.6017 9.62573 22.0555 9.38642 22.0555 9.83803ZM21.814 11.9251C21.737 11.9279 21.6603 11.9152 21.5883 11.8877C21.5164 11.8602 21.4507 11.8185 21.3952 11.7651C21.3398 11.7117 21.2956 11.6476 21.2655 11.5768C21.2353 11.5059 21.2198 11.4297 21.2197 11.3527C21.2197 11.2757 21.2351 11.1994 21.2652 11.1285C21.2953 11.0576 21.3393 10.9935 21.3947 10.94C21.4501 10.8865 21.5157 10.8447 21.5876 10.8172C21.6595 10.7896 21.7362 10.7768 21.8132 10.7795C21.9615 10.7848 22.102 10.8474 22.2051 10.9542C22.3082 11.0609 22.3659 11.2035 22.366 11.3519C22.3661 11.5003 22.3086 11.643 22.2056 11.7499C22.1027 11.8568 21.9623 11.9196 21.814 11.9251Z" />
                               </svg>
@@ -2595,7 +2594,10 @@ export function KkcpTree() {
                           {" "}
                           <span className="button-icon">
                             {" "}
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 15">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 18 15"
+                            >
                               <path d="M10.5 7.5C10.5 8.32843 9.82843 9 9 9C8.17157 9 7.5 8.32843 7.5 7.5C7.5 6.67157 8.17157 6 9 6C9.82843 6 10.5 6.67157 10.5 7.5Z" />
                               <path d="M10.5 13.5C10.5 14.3284 9.82843 15 9 15C8.17157 15 7.5 14.3284 7.5 13.5C7.5 12.6716 8.17157 12 9 12C9.82843 12 10.5 12.6716 10.5 13.5Z" />
                               <path d="M3 7.5C3 8.32843 2.32843 9 1.5 9C0.671573 9 0 8.32843 0 7.5C0 6.67157 0.671573 6 1.5 6C2.32843 6 3 6.67157 3 7.5Z" />
@@ -2603,7 +2605,10 @@ export function KkcpTree() {
                               <path d="M10.5 1.5C10.5 2.32843 9.82843 3 9 3C8.17157 3 7.5 2.32843 7.5 1.5C7.5 0.671573 8.17157 0 9 0C9.82843 0 10.5 0.671573 10.5 1.5Z" />
                             </svg>{" "}
                           </span>{" "}
-                          <span className="button-text" data-text={"View More Events"}>
+                          <span
+                            className="button-text"
+                            data-text={"View More Events"}
+                          >
                             View More Events{" "}
                           </span>{" "}
                         </a>
@@ -2628,7 +2633,7 @@ export function KkcpTree() {
                       {" "}
                       <div className="rs-event-posts">
                         {" "}
-                        <div className="grid-wrapper">
+                        <div className="horizontal-animation">
                           {" "}
                           <div className="event-post-item animated fadeInUp">
                             {" "}
@@ -2648,12 +2653,15 @@ export function KkcpTree() {
                             <div className="event-content">
                               {" "}
                               <h4 className="event-title">
-                                <a href="#">M.Pharm Pharmacy Practice Programme Launched</a>
+                                <a href="#">
+                                  M.Pharm Pharmacy Practice Programme Launched
+                                </a>
                               </h4>{" "}
                               <div className="event-meta after-title">
                                 {" "}
                                 <span className="meta-time">
-                                  <i className="ri-map-2-line"></i>Chennai, India{" "}
+                                  <i className="ri-map-2-line"></i>Chennai,
+                                  India{" "}
                                 </span>{" "}
                               </div>{" "}
                             </div>{" "}
@@ -2676,12 +2684,15 @@ export function KkcpTree() {
                             <div className="event-content">
                               {" "}
                               <h4 className="event-title">
-                                <a href="#">Ph.D. Programme Recognized by University</a>
+                                <a href="#">
+                                  Ph.D. Programme Recognized by University
+                                </a>
                               </h4>{" "}
                               <div className="event-meta after-title">
                                 {" "}
                                 <span className="meta-time">
-                                  <i className="ri-map-2-line"></i>Chennai, India{" "}
+                                  <i className="ri-map-2-line"></i>Chennai,
+                                  India{" "}
                                 </span>{" "}
                               </div>{" "}
                             </div>{" "}
@@ -2709,7 +2720,8 @@ export function KkcpTree() {
                               <div className="event-meta after-title">
                                 {" "}
                                 <span className="meta-time">
-                                  <i className="ri-map-2-line"></i>Chennai, India{" "}
+                                  <i className="ri-map-2-line"></i>Chennai,
+                                  India{" "}
                                 </span>{" "}
                               </div>{" "}
                             </div>{" "}
@@ -2732,12 +2744,138 @@ export function KkcpTree() {
                             <div className="event-content">
                               {" "}
                               <h4 className="event-title">
-                                <a href="#">M.Pharm Regulatory Affairs Programme Launched</a>
+                                <a href="#">
+                                  M.Pharm Regulatory Affairs Programme Launched
+                                </a>
                               </h4>{" "}
                               <div className="event-meta after-title">
                                 {" "}
                                 <span className="meta-time">
-                                  <i className="ri-map-2-line"></i>Chennai, India{" "}
+                                  <i className="ri-map-2-line"></i>Chennai,
+                                  India{" "}
+                                </span>{" "}
+                              </div>{" "}
+                            </div>{" "}
+                          </div>{" "}
+                          {/* Duplicate set */}
+                          <div className="event-post-item animated fadeInUp">
+                            {" "}
+                            <div className="event-thumbnail">
+                              <img
+                                loading="lazy"
+                                decoding="async"
+                                width="1280"
+                                height="768"
+                                src="/test-dummy-webs-1/assets/0105__e-event-img-1-min.webp"
+                                className="attachment-full size-full wp-post-image"
+                                alt=""
+                                srcSet="/test-dummy-webs-1/assets/0105__e-event-img-1-min.webp 1280w, /test-dummy-webs-1/assets/0145__e-event-img-1-min-300x180.webp 300w, /test-dummy-webs-1/assets/0146__e-event-img-1-min-1024x614.webp 1024w, /test-dummy-webs-1/assets/0147__e-event-img-1-min-768x461.webp 768w"
+                                sizes="(max-width: 1280px) 100vw, 1280px"
+                              />{" "}
+                            </div>{" "}
+                            <div className="event-content">
+                              {" "}
+                              <h4 className="event-title">
+                                <a href="#">
+                                  M.Pharm Pharmacy Practice Programme Launched
+                                </a>
+                              </h4>{" "}
+                              <div className="event-meta after-title">
+                                {" "}
+                                <span className="meta-time">
+                                  <i className="ri-map-2-line"></i>Chennai,
+                                  India{" "}
+                                </span>{" "}
+                              </div>{" "}
+                            </div>{" "}
+                          </div>{" "}
+                          <div className="event-post-item animated fadeInUp">
+                            {" "}
+                            <div className="event-thumbnail">
+                              <img
+                                loading="lazy"
+                                decoding="async"
+                                width="1280"
+                                height="768"
+                                src="/test-dummy-webs-1/assets/0106__e-event-img-2-min.webp"
+                                className="attachment-full size-full wp-post-image"
+                                alt=""
+                                srcSet="/test-dummy-webs-1/assets/0106__e-event-img-2-min.webp 1280w, /test-dummy-webs-1/assets/0148__e-event-img-2-min-300x180.webp 300w, /test-dummy-webs-1/assets/0149__e-event-img-2-min-1024x614.webp 1024w, /test-dummy-webs-1/assets/0150__e-event-img-2-min-768x461.webp 768w"
+                                sizes="(max-width: 1280px) 100vw, 1280px"
+                              />{" "}
+                            </div>{" "}
+                            <div className="event-content">
+                              {" "}
+                              <h4 className="event-title">
+                                <a href="#">
+                                  Ph.D. Programme Recognized by University
+                                </a>
+                              </h4>{" "}
+                              <div className="event-meta after-title">
+                                {" "}
+                                <span className="meta-time">
+                                  <i className="ri-map-2-line"></i>Chennai,
+                                  India{" "}
+                                </span>{" "}
+                              </div>{" "}
+                            </div>{" "}
+                          </div>{" "}
+                          <div className="event-post-item animated fadeInUp">
+                            {" "}
+                            <div className="event-thumbnail">
+                              <img
+                                loading="lazy"
+                                decoding="async"
+                                width="1280"
+                                height="768"
+                                src="/test-dummy-webs-1/assets/0108__e-event-img-3-min.webp"
+                                className="attachment-full size-full wp-post-image"
+                                alt=""
+                                srcSet="/test-dummy-webs-1/assets/0108__e-event-img-3-min.webp 1280w, /test-dummy-webs-1/assets/0151__e-event-img-3-min-300x180.webp 300w, /test-dummy-webs-1/assets/0152__e-event-img-3-min-1024x614.webp 1024w, /test-dummy-webs-1/assets/0153__e-event-img-3-min-768x461.webp 768w"
+                                sizes="(max-width: 1280px) 100vw, 1280px"
+                              />{" "}
+                            </div>{" "}
+                            <div className="event-content">
+                              {" "}
+                              <h4 className="event-title">
+                                <a href="#">Industry Placement Drive – 2025</a>
+                              </h4>{" "}
+                              <div className="event-meta after-title">
+                                {" "}
+                                <span className="meta-time">
+                                  <i className="ri-map-2-line"></i>Chennai,
+                                  India{" "}
+                                </span>{" "}
+                              </div>{" "}
+                            </div>{" "}
+                          </div>{" "}
+                          <div className="event-post-item animated fadeInUp">
+                            {" "}
+                            <div className="event-thumbnail">
+                              <img
+                                loading="lazy"
+                                decoding="async"
+                                width="1280"
+                                height="768"
+                                src="/test-dummy-webs-1/assets/0107__e-event-img-4-min.webp"
+                                className="attachment-full size-full wp-post-image"
+                                alt=""
+                                srcSet="/test-dummy-webs-1/assets/0107__e-event-img-4-min.webp 1280w, /test-dummy-webs-1/assets/0154__e-event-img-4-min-300x180.webp 300w, /test-dummy-webs-1/assets/0155__e-event-img-4-min-1024x614.webp 1024w, /test-dummy-webs-1/assets/0156__e-event-img-4-min-768x461.webp 768w"
+                                sizes="(max-width: 1280px) 100vw, 1280px"
+                              />{" "}
+                            </div>{" "}
+                            <div className="event-content">
+                              {" "}
+                              <h4 className="event-title">
+                                <a href="#">
+                                  M.Pharm Regulatory Affairs Programme Launched
+                                </a>
+                              </h4>{" "}
+                              <div className="event-meta after-title">
+                                {" "}
+                                <span className="meta-time">
+                                  <i className="ri-map-2-line"></i>Chennai,
+                                  India{" "}
                                 </span>{" "}
                               </div>{" "}
                             </div>{" "}
@@ -2810,7 +2948,7 @@ export function KkcpTree() {
                           <img
                             decoding="async"
                             className="rs-multi-image  reverse- blend_unset"
-                            src="/kkcp/web/home/5-message-img-0112.webp"
+                            src="/kkcp/web/home/5-message-img-0112(1).png"
                             alt="Dr. A. Meena, Principal of K.K. College of Pharmacy"
                           />{" "}
                         </div>
@@ -2838,8 +2976,9 @@ export function KkcpTree() {
                           <div className="title-inner"> </div>{" "}
                           <div className="descripti">
                             <p>
-                              &quot;We believe every pharmacy student deserves an environment that
-                              promotes academic success, personal well-being and professional
+                              &quot;We believe every pharmacy student deserves
+                              an environment that promotes academic success,
+                              personal well-being and professional
                               excellence.&quot;
                             </p>{" "}
                           </div>{" "}
@@ -2871,7 +3010,9 @@ export function KkcpTree() {
                             <div className="prelements-heading default   animate-  ">
                               {" "}
                               <div className="title-inner">
-                                <h4 className="title  ">Prof. Dr. A. Meena</h4>{" "}
+                                <h4 className="title  ">
+                                  Prof. Dr. A. Meena
+                                </h4>{" "}
                               </div>{" "}
                               <div className="descripti">
                                 <p>Principal</p>{" "}
@@ -2935,7 +3076,10 @@ export function KkcpTree() {
                           <div className="title-inner">
                             {" "}
                             <span className="sub-text ">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                              >
                                 <path d="M5.21484 12.8949V16.6564C5.21484 16.6564 8.82175 15.1537 12.0198 15.1537C15.2178 15.1537 18.8255 16.6564 18.8255 16.6564V12.8424C18.8255 12.8424 15.3844 11.0225 11.9665 11.0225C8.55018 11.021 5.21484 12.8949 5.21484 12.8949Z" />
                                 <path d="M22.6467 11.9993L24 11.2716L22.6467 10.5222V10.1666C22.6467 10.1666 23.0278 8.23413 20.862 9.24464C20.7517 9.30465 20.6924 9.36542 20.6684 9.42468L11.7367 4.47119L0 11.1884L4.43211 13.2019V12.5485C4.43211 12.5485 8.15079 10.4607 11.9625 10.4607C15.7734 10.4607 19.6092 12.4899 19.6092 12.4899V13.631L22.0563 12.3167V17.6377H21.2416V19.529L22.3248 18.7803L23.5274 19.529V17.637H22.6467V11.9993ZM22.0555 9.83803V10.1944L21.3413 9.79827C21.6017 9.62573 22.0555 9.38642 22.0555 9.83803ZM21.814 11.9251C21.737 11.9279 21.6603 11.9152 21.5883 11.8877C21.5164 11.8602 21.4507 11.8185 21.3952 11.7651C21.3398 11.7117 21.2956 11.6476 21.2655 11.5768C21.2353 11.5059 21.2198 11.4297 21.2197 11.3527C21.2197 11.2757 21.2351 11.1994 21.2652 11.1285C21.2953 11.0576 21.3393 10.9935 21.3947 10.94C21.4501 10.8865 21.5157 10.8447 21.5876 10.8172C21.6595 10.7896 21.7362 10.7768 21.8132 10.7795C21.9615 10.7848 22.102 10.8474 22.2051 10.9542C22.3082 11.0609 22.3659 11.2035 22.366 11.3519C22.3661 11.5003 22.3086 11.643 22.2056 11.7499C22.1027 11.8568 21.9623 11.9196 21.814 11.9251Z" />
                               </svg>
@@ -3035,8 +3179,9 @@ export function KkcpTree() {
                           <div className="title-inner"> </div>{" "}
                           <div className="descripti">
                             <p>
-                              Experience KKCP Campus Life where Pharmacy Education meets modern
-                              laboratories, vibrant student activities and industry-ready training
+                              Experience KKCP Campus Life where Pharmacy
+                              Education meets modern laboratories, vibrant
+                              student activities and industry-ready training
                               every day.
                             </p>{" "}
                           </div>{" "}
@@ -3358,7 +3503,9 @@ export function KkcpTree() {
                           />
                           <figcaption className="kkcp-faculty-caption">
                             <p className="kkcp-faculty-name">{member.name}</p>
-                            <p className="kkcp-faculty-designation">{member.designation}</p>
+                            <p className="kkcp-faculty-designation">
+                              {member.designation}
+                            </p>
                           </figcaption>
                         </figure>
                       ))}
@@ -3372,7 +3519,10 @@ export function KkcpTree() {
                   by change 1.16 IN THIS FILE - a cross-file coupling to keep in mind if this
                   file is moved without that component.
                   ============================================================================== */}
-              <AdmissionsSection />
+              <div id="admissionsSection" className="scroll-mt-1!">
+                <AdmissionsSection />
+              </div>
+
               <div
                 data-aos-once={"true"}
                 className="elementor-element elementor-element-7db666c e-con-full e-flex e-con e-child"
@@ -3380,25 +3530,6 @@ export function KkcpTree() {
                 data-element_type={"container"}
                 data-e-type={"container"}
               >
-                <div
-                  data-aos-once={"true"}
-                  className="elementor-element elementor-element-df71484 elementor-widget-tablet__width-initial elementor-widget elementor-widget-rs-image"
-                  data-id={"df71484"}
-                  data-element_type={"widget"}
-                  data-e-type={"widget"}
-                  data-widget_type={"rs-image.default"}
-                >
-                  {" "}
-                  <div className="rs-image">
-                    {" "}
-                    <img
-                      decoding="async"
-                      className="rs-multi-image  reverse- blend_unset"
-                      src="/kkcp/web/home/1-home-page-next-to-footer-portion-img-0286.webp"
-                      alt="K.K. College of Pharmacy campus"
-                    />{" "}
-                  </div>
-                </div>
                 <div
                   data-aos-once={"true"}
                   className="elementor-element elementor-element-0cfcfb5 elementor-widget-tablet__width-initial elementor-widget elementor-widget-rs-image"
@@ -3418,6 +3549,7 @@ export function KkcpTree() {
                     />{" "}
                   </div>
                 </div>
+
                 <div
                   data-aos-once={"true"}
                   className="elementor-element elementor-element-1887079 elementor-widget-tablet__width-initial elementor-widget elementor-widget-rs-image"
@@ -3437,10 +3569,11 @@ export function KkcpTree() {
                     />{" "}
                   </div>
                 </div>
+
                 <div
                   data-aos-once={"true"}
-                  className="elementor-element elementor-element-c47c33a elementor-widget-tablet__width-initial elementor-widget elementor-widget-rs-image"
-                  data-id={"c47c33a"}
+                  className="elementor-element elementor-element-df71484 elementor-widget-tablet__width-initial elementor-widget elementor-widget-rs-image"
+                  data-id={"df71484"}
                   data-element_type={"widget"}
                   data-e-type={"widget"}
                   data-widget_type={"rs-image.default"}
@@ -3451,11 +3584,12 @@ export function KkcpTree() {
                     <img
                       decoding="async"
                       className="rs-multi-image  reverse- blend_unset"
-                      src="/test-dummy-webs-1/assets/0090__gallery-img4-min.webp"
-                      alt="gallery-img4-min"
+                      src="/kkcp/web/home/1-home-page-next-to-footer-portion-img-0286.webp"
+                      alt="K.K. College of Pharmacy campus"
                     />{" "}
                   </div>
                 </div>
+
                 <div
                   data-aos-once={"true"}
                   className="elementor-element elementor-element-80529ab elementor-widget-tablet__width-initial elementor-widget elementor-widget-rs-image"
@@ -3470,15 +3604,16 @@ export function KkcpTree() {
                     <img
                       decoding="async"
                       className="rs-multi-image  reverse- blend_unset"
-                      src="/test-dummy-webs-1/assets/0091__gallery-img5-5-min.webp"
+                      src="/kkcp/web/home/2-home-page-courses-5-pharm-d-pb.webp"
                       alt="gallery-img5-5-min"
                     />{" "}
                   </div>
                 </div>
+
                 <div
                   data-aos-once={"true"}
-                  className="elementor-element elementor-element-703c566 elementor-widget-tablet__width-initial elementor-widget elementor-widget-rs-image"
-                  data-id={"703c566"}
+                  className="elementor-element elementor-element-c47c33a elementor-widget-tablet__width-initial elementor-widget elementor-widget-rs-image"
+                  data-id={"c47c33a"}
                   data-element_type={"widget"}
                   data-e-type={"widget"}
                   data-widget_type={"rs-image.default"}
@@ -3489,12 +3624,34 @@ export function KkcpTree() {
                     <img
                       decoding="async"
                       className="rs-multi-image  reverse- blend_unset"
-                      src="/test-dummy-webs-1/assets/0092__gallery-img6-min.webp"
-                      alt="gallery-img6-min"
+                      src="/kkcp/web/home/2-home-page-courses-4-pharm-d.webp"
+                      alt="gallery-img4-min"
                     />{" "}
                   </div>
                 </div>
+
                 <div
+                  data-aos-once={"true"}
+                  className="elementor-element elementor-element-c47c33a elementor-widget-tablet__width-initial elementor-widget elementor-widget-rs-image"
+                  data-id={"c47c33a"}
+                  data-element_type={"widget"}
+                  data-e-type={"widget"}
+                  data-widget_type={"rs-image.default"}
+                >
+                  {" "}
+                  <div className="rs-image">
+                    {" "}
+                    <img
+                      decoding="async"
+                      className="rs-multi-image  reverse- blend_unset"
+                      src="/kkcp/web/home/3-empowering-students-img-0146.webp"
+                      alt="gallery-img4-min"
+                    />{" "}
+                  </div>
+                </div>
+
+                {/* Discover Our Campus */}
+                {/* <div
                   data-aos-once={"true"}
                   className="elementor-element elementor-element-6d7e9d3 elementor-absolute elementor-widget-mobile__width-inherit e-transform elementor-widget elementor-widget-rs-button"
                   data-id={"6d7e9d3"}
@@ -3525,7 +3682,7 @@ export function KkcpTree() {
                       Discover Our Campus{" "}
                     </span>{" "}
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>{" "}
           </main>{" "}
@@ -3583,41 +3740,93 @@ export function KkcpTree() {
           </span>
           <div className="flatpickr-month">
             <div className="flatpickr-current-month">
-              <select className="flatpickr-monthDropdown-months" aria-label={"Month"} tabIndex="-1">
-                <option className="flatpickr-monthDropdown-month" value="0" tabIndex="-1">
+              <select
+                className="flatpickr-monthDropdown-months"
+                aria-label={"Month"}
+                tabIndex="-1"
+              >
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="0"
+                  tabIndex="-1"
+                >
                   January
                 </option>
-                <option className="flatpickr-monthDropdown-month" value="1" tabIndex="-1">
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="1"
+                  tabIndex="-1"
+                >
                   February
                 </option>
-                <option className="flatpickr-monthDropdown-month" value="2" tabIndex="-1">
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="2"
+                  tabIndex="-1"
+                >
                   March
                 </option>
-                <option className="flatpickr-monthDropdown-month" value="3" tabIndex="-1">
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="3"
+                  tabIndex="-1"
+                >
                   April
                 </option>
-                <option className="flatpickr-monthDropdown-month" value="4" tabIndex="-1">
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="4"
+                  tabIndex="-1"
+                >
                   May
                 </option>
-                <option className="flatpickr-monthDropdown-month" value="5" tabIndex="-1">
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="5"
+                  tabIndex="-1"
+                >
                   June
                 </option>
-                <option className="flatpickr-monthDropdown-month" value="6" tabIndex="-1">
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="6"
+                  tabIndex="-1"
+                >
                   July
                 </option>
-                <option className="flatpickr-monthDropdown-month" value="7" tabIndex="-1">
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="7"
+                  tabIndex="-1"
+                >
                   August
                 </option>
-                <option className="flatpickr-monthDropdown-month" value="8" tabIndex="-1">
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="8"
+                  tabIndex="-1"
+                >
                   September
                 </option>
-                <option className="flatpickr-monthDropdown-month" value="9" tabIndex="-1">
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="9"
+                  tabIndex="-1"
+                >
                   October
                 </option>
-                <option className="flatpickr-monthDropdown-month" value="10" tabIndex="-1">
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="10"
+                  tabIndex="-1"
+                >
                   November
                 </option>
-                <option className="flatpickr-monthDropdown-month" value="11" tabIndex="-1">
+                <option
+                  className="flatpickr-monthDropdown-month"
+                  value="11"
+                  tabIndex="-1"
+                >
                   December
                 </option>
               </select>
@@ -3696,76 +3905,172 @@ export function KkcpTree() {
                 >
                   30
                 </span>
-                <span className="flatpickr-day" aria-label={"May 1, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 1, 2026"}
+                  tabIndex="-1"
+                >
                   1
                 </span>
-                <span className="flatpickr-day" aria-label={"May 2, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 2, 2026"}
+                  tabIndex="-1"
+                >
                   2
                 </span>
-                <span className="flatpickr-day" aria-label={"May 3, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 3, 2026"}
+                  tabIndex="-1"
+                >
                   3
                 </span>
-                <span className="flatpickr-day" aria-label={"May 4, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 4, 2026"}
+                  tabIndex="-1"
+                >
                   4
                 </span>
-                <span className="flatpickr-day" aria-label={"May 5, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 5, 2026"}
+                  tabIndex="-1"
+                >
                   5
                 </span>
-                <span className="flatpickr-day" aria-label={"May 6, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 6, 2026"}
+                  tabIndex="-1"
+                >
                   6
                 </span>
-                <span className="flatpickr-day" aria-label={"May 7, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 7, 2026"}
+                  tabIndex="-1"
+                >
                   7
                 </span>
-                <span className="flatpickr-day" aria-label={"May 8, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 8, 2026"}
+                  tabIndex="-1"
+                >
                   8
                 </span>
-                <span className="flatpickr-day" aria-label={"May 9, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 9, 2026"}
+                  tabIndex="-1"
+                >
                   9
                 </span>
-                <span className="flatpickr-day" aria-label={"May 10, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 10, 2026"}
+                  tabIndex="-1"
+                >
                   10
                 </span>
-                <span className="flatpickr-day" aria-label={"May 11, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 11, 2026"}
+                  tabIndex="-1"
+                >
                   11
                 </span>
-                <span className="flatpickr-day" aria-label={"May 12, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 12, 2026"}
+                  tabIndex="-1"
+                >
                   12
                 </span>
-                <span className="flatpickr-day" aria-label={"May 13, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 13, 2026"}
+                  tabIndex="-1"
+                >
                   13
                 </span>
-                <span className="flatpickr-day" aria-label={"May 14, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 14, 2026"}
+                  tabIndex="-1"
+                >
                   14
                 </span>
-                <span className="flatpickr-day" aria-label={"May 15, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 15, 2026"}
+                  tabIndex="-1"
+                >
                   15
                 </span>
-                <span className="flatpickr-day" aria-label={"May 16, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 16, 2026"}
+                  tabIndex="-1"
+                >
                   16
                 </span>
-                <span className="flatpickr-day" aria-label={"May 17, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 17, 2026"}
+                  tabIndex="-1"
+                >
                   17
                 </span>
-                <span className="flatpickr-day" aria-label={"May 18, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 18, 2026"}
+                  tabIndex="-1"
+                >
                   18
                 </span>
-                <span className="flatpickr-day" aria-label={"May 19, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 19, 2026"}
+                  tabIndex="-1"
+                >
                   19
                 </span>
-                <span className="flatpickr-day" aria-label={"May 20, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 20, 2026"}
+                  tabIndex="-1"
+                >
                   20
                 </span>
-                <span className="flatpickr-day" aria-label={"May 21, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 21, 2026"}
+                  tabIndex="-1"
+                >
                   21
                 </span>
-                <span className="flatpickr-day" aria-label={"May 22, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 22, 2026"}
+                  tabIndex="-1"
+                >
                   22
                 </span>
-                <span className="flatpickr-day" aria-label={"May 23, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 23, 2026"}
+                  tabIndex="-1"
+                >
                   23
                 </span>
-                <span className="flatpickr-day" aria-label={"May 24, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 24, 2026"}
+                  tabIndex="-1"
+                >
                   24
                 </span>
                 <span
@@ -3776,22 +4081,46 @@ export function KkcpTree() {
                 >
                   25
                 </span>
-                <span className="flatpickr-day" aria-label={"May 26, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 26, 2026"}
+                  tabIndex="-1"
+                >
                   26
                 </span>
-                <span className="flatpickr-day" aria-label={"May 27, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 27, 2026"}
+                  tabIndex="-1"
+                >
                   27
                 </span>
-                <span className="flatpickr-day" aria-label={"May 28, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 28, 2026"}
+                  tabIndex="-1"
+                >
                   28
                 </span>
-                <span className="flatpickr-day" aria-label={"May 29, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 29, 2026"}
+                  tabIndex="-1"
+                >
                   29
                 </span>
-                <span className="flatpickr-day" aria-label={"May 30, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 30, 2026"}
+                  tabIndex="-1"
+                >
                   30
                 </span>
-                <span className="flatpickr-day" aria-label={"May 31, 2026"} tabIndex="-1">
+                <span
+                  className="flatpickr-day"
+                  aria-label={"May 31, 2026"}
+                  tabIndex="-1"
+                >
                   31
                 </span>
                 <span
@@ -3842,14 +4171,21 @@ export function KkcpTree() {
         </div>
       </div>
       <sr7-fonttest-wrap aria-hidden={"true"}>
-        <span style={{ fontFamily: "Bitter, sans-serif", fontWeight: "600" }}>BESbswy</span>
-        <span style={{ fontFamily: "Roboto, sans-serif", fontWeight: "400" }}>BESbswy</span>
+        <span style={{ fontFamily: "Bitter, sans-serif", fontWeight: "600" }}>
+          BESbswy
+        </span>
+        <span style={{ fontFamily: "Roboto, sans-serif", fontWeight: "400" }}>
+          BESbswy
+        </span>
         <i
           className="fa-power-off"
           style={{ fontFamily: "FontAwesome, sans-serif", fontWeight: "400" }}
         ></i>
       </sr7-fonttest-wrap>
-      <svg style={{ display: "none" }} className="e-font-icon-svg-symbols"></svg>
+      <svg
+        style={{ display: "none" }}
+        className="e-font-icon-svg-symbols"
+      ></svg>
     </div>
   );
 }

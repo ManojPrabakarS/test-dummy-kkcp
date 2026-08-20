@@ -53,7 +53,7 @@ const FACILITIES = [
     id: "laboratory",
     name: "2 Campus → Laboratory",
     blocks: [
-      { type: "p", text: "We are proud to offer our students exceptional laboratory facilities. Equipped with state-of-the-art instruments and apparatus, students can safely participate in a variety of hands-on experiments pertinent to their selected fields. Our lab equipment is consistently updated and our extensive assortment of glassware & chemicals is readily accessible for student use. Our labs in Pharmaceutics, Pharmaceutical Chemistry, Pharmacology, Pharmacy Practice, Pharmacognosy, Pharmaceutical Analysis, Pharmaceutical Biotechnology, Human Anatomy and Physiology and Computer Science adhere to the highest safety and quality standards, guaranteeing that students enjoy valuable laboratory experiences." },
+      { type: "p", text: "We are proud to offer our students exceptional laboratory facilities, equipped with state-of-the-art instruments and apparatus, students can safely participate in a variety of hands-on experiments pertinent to their selected fields. Our lab equipment is consistently updated and our extensive assortment of glassware & chemicals is readily accessible for student use. Our department labs in Pharmaceutics, Pharmaceutical Chemistry, Pharmacology, Pharmacy Practice, Pharmacognosy, Pharmaceutical Analysis, Pharmaceutical Biotechnology, Human Anatomy and Physiology and Computer Science adhere to the highest safety and quality standards, guaranteeing that students enjoy valuable laboratory experiences." },
     ],
   },
   {
@@ -62,7 +62,7 @@ const FACILITIES = [
     name: "3 Campus →Animal House Facility",
     blocks: [
       { type: "p", text: "The Animal House at our institution is a meticulously maintained and ethically operated facility designed to facilitate pre-clinical and pharmacological research endeavors. It offers a regulated environment for the care and upkeep of laboratory animals utilized in scientific studies." },
-      { type: "p", text: "Our facility adheres rigorously to the guidelines set forth by the Committee for the Purpose of Control and Supervision of Experiments on Animals (CPCSEA), Government of India (Registration No. 1395/a/10/CPCSEA), guaranteeing the utmost standards of animal welfare and ethical adherence." },
+      { type: "p", text: "Our facility adheres rigorously to the guidelines set forth by the Committee for Control and Supervision of Experiments on Animals (CCSEA), Government of India (Registration No. 1395/a/10/CPCSEA), guaranteeing the utmost standards of animal welfare and ethical adherence." },
     ],
   },
   {
@@ -71,9 +71,9 @@ const FACILITIES = [
     name: "4 Campus → Library",
     blocks: [
       { type: "label", text: "Library" },
-      { type: "p", text: "Our college library serves as a haven for knowledge seekers, featuring a vast array of books across numerous disciplines, such as Pharmaceutics, Pharmacy Practice, Pharmacognosy, Pharmaceutical Analysis, Pharmaceutical Chemistry, Community Pharmacy, Clinical & Pharmacology, Hospital Pharmacy, Pharmaceutical Regulatory Affairs and Computer Science." },
-      { type: "p", text: "We offer a diverse selection of national and international journals, along with subscriptions to E-Journals. The library is equipped with broadband internet access and Wi-Fi, ensuring students can easily connect to resources." },
-      { type: "p", text: "Our library creates a tranquil atmosphere that promotes learning and intellectual development. Our dedicated librarians and faculty members are always ready to support students with their research needs." },
+      { type: "p", text: "Our college library serves as a heaven for knowledge seekers, featuring a vast array of books across numerous disciplines, such as Pharmaceutics, Pharmacy Practice, Pharmacognosy, Pharmaceutical Analysis, Pharmaceutical Chemistry, Community Pharmacy, Clinical & Pharmacology, Hospital Pharmacy, Pharmaceutical Regulatory Affairs and Computer Science." },
+      { type: "p", text: "We offer a diverse selection of national and international journals, along with subscription to e-Journals. The library is equipped with broadband internet access and Wi-Fi, ensuring students can easily connect to resources." },
+      { type: "p", text: "Our library creates a tranquil atmosphere that promotes learning and intellectual development. Our dedicated librarian and faculty members are always ready to support students with their research needs." },
       { type: "p", text: "Additionally, the library is equipped with modern facilities, including computer terminals and printers. We invite you to explore our extensive collection, enjoy the joys of reading & uncover new knowledge at our college library." },
     ],
   },
@@ -93,7 +93,7 @@ const FACILITIES = [
     blocks: [
       { type: "label", text: "Reliable and Safe College Transport" },
       { type: "p", text: "Our college provides convenient transportation services that link students to different areas of the city." },
-      { type: "p", text: "With skilled and timely drivers, we guarantee that students arrive at their destinations safely and punctually." },
+      { type: "p", text: "We guarantee that students arrive at their destinations safely and punctually with skilled and timely drivers." },
       { type: "p", text: "Our fleet of well-kept buses is outfitted with contemporary safety features, such as GPS tracking and CCTV cameras, ensuring peace of mind for both students and their parents." },
       { type: "p", text: "From morning pickups to evening drop-offs, our transportation system emphasizes comfort, safety and dependability, demonstrating our dedication to student convenience." },
     ],
@@ -137,7 +137,7 @@ export function KkcpTree() {
                 <div className="elementor-element elementor-element-3cae832 elementor-widget elementor-widget-rstb-page-title" data-id={"3cae832"} data-element_type={"widget"} data-widget_type={"rstb-page-title.default"}><h1 className="rstb-page-title">Campus</h1></div>
                 <div className="elementor-element elementor-element-4626c23 elementor-widget elementor-widget-rs-divider" data-id={"4626c23"} data-element_type={"widget"} data-widget_type={"rs-divider.default"}><div className="rs-divider dot-enable"><span> </span></div></div>
                 <div className="elementor-element elementor-element-419a788 elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id={"419a788"} data-element_type={"widget"} data-widget_type={"text-editor.default"}><p>Education goes beyond textbooks and classrooms. We believe in empowering students to explore their passions challenge conventions.</p></div>
-                <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{transform: "translate(0px, 0px)"}}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.webp" alt="bnr-arrow-1-1" /></div></div>
+                <div className="elementor-element elementor-element-d0b1073 elementor-absolute gsap-move-yes down-90 start-10 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-rs-image" data-id={"d0b1073"} data-element_type={"widget"} data-settings={"{\"_position\":\"absolute\"}"} data-widget_type={"rs-image.default"} style={{ transform: "translate(0px, 0px)" }}><div className="rs-image"><img decoding="async" className="rs-multi-image  reverse- blend_unset" src="/all-programs/assets/0046__bnr-arrow-1-1.webp" alt="bnr-arrow-1-1" /></div></div>
               </div>
             </div>
 
@@ -148,7 +148,7 @@ export function KkcpTree() {
                   <div className="rs-academic-filter-area" data-widget-id={"57146e5"}>
                     <div className="filter-sidebar-overly"></div>
                     <div className="filter-sidebar">
-                      <h4 className="sidebar-title">Filter By<span className="filter-reset-btn" style={{display: "none"}}>Reset</span></h4>
+                      <h4 className="sidebar-title">Filter By<span className="filter-reset-btn" style={{ display: "none" }}>Reset</span></h4>
                       <Criteria title="Campus" items={CAMPUS_FILTERS} />
                     </div>
                     <div className="filter-content">
@@ -160,18 +160,127 @@ export function KkcpTree() {
                           <span className="search-icon"><svg className="e-font-icon-svg e-fas-search" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" /></svg></span>
                         </span>
                       </div>
-                      <div className="filter-items-wrapper">
+                      <div className="filter-items-wrapper flex flex-col gap-6">
                         {FACILITIES.map((f, idx) => (
-                          <div className="filter-item dept-filter-item" id={f.id} key={f.no}>
-                            <div className="item-thumbnail">
-                              <img loading="lazy" decoding="async" width="770" height="660" src={THUMBS[idx % THUMBS.length]} className="attachment-large size-large wp-post-image" alt={f.name} />
+                          <div
+                            className="
+        dept-filter-item!
+        flex!
+        w-full!
+        flex-col!
+        overflow-hidden!
+        rounded-xl!
+        border!
+        border-gray-200!
+        bg-white!
+        shadow-sm!
+
+        md:flex-row!
+      "
+                            id={f.id}
+                            key={f.no}
+                          >
+                            {/* LEFT - IMAGE 30% */}
+                            <div
+                              className="
+          item-thumbnail
+          w-full!
+          shrink-0!
+          md:w-[30%]!
+        "
+                            >
+                              <img
+                                loading="lazy"
+                                decoding="async"
+                                width="550"
+                                height="550"
+                                src={THUMBS[idx % THUMBS.length]}
+                                className="
+            block!
+            h-full!
+            min-h-45!
+            w-full!
+            object-cover!
+
+            md:min-h-55!
+          "
+                                alt={f.name}
+                              />
                             </div>
-                            <div className="item-content">
-                              <h4 className="item-title"><a href="#">{f.name}</a></h4>
-                              <ul className="item-meta"><li><a href="#">Campus {f.no}</a></li></ul>
+
+                            {/* RIGHT - CONTENT 70% */}
+                            <div
+                              className="
+          item-content!
+          flex!
+          w-full!
+          flex-col!
+          justify-center!
+          px-6!
+          py-6!
+
+          md:w-[70%]!
+          md:px-8!
+          lg:px-10!
+        "
+                            >
+                              {/* TITLE */}
+                              <h4
+                                className="
+            item-title!
+            mb-1!
+            font-serif!
+            text-[22px]!
+            font-semibold!
+            leading-tight!
+            text-[#034EA2]!
+          "
+                              >
+                                <a
+                                  href="#"
+                                  className="
+              text-[#034EA2]!
+              no-underline!
+              transition-colors!
+              duration-200!
+              hover:text-[#FDC72F]!
+            "
+                                >
+                                  {f.name}
+                                </a>
+                              </h4>
+
+                              {/* CAMPUS */}
+                              <ul
+                                className="
+            item-meta
+            mb-1!
+            list-none!
+            p-0!
+          "
+                              >
+                                <li>
+                                  <a
+                                    href="#"
+                                    className="
+                text-[14px]!
+                font-medium!
+                text-[#4C4C4C]!
+                no-underline!
+              "
+                                  >
+                                    Campus {f.no}
+                                  </a>
+                                </li>
+                              </ul>
+
+                              {/* DESCRIPTION */}
                               <div className="item-desc dept-desc">
                                 {f.blocks.map((block, i) => (
-                                  <Block block={block} key={i} />
+                                  <Block
+                                    block={block}
+                                    key={i}
+                                  />
                                 ))}
                               </div>
                             </div>
@@ -218,7 +327,7 @@ export function KkcpTree() {
             .elementor-7888 .criteria-link:hover { color: #034EA2; }
             /* Offset anchor targets so they clear the sticky site header */
             .elementor-7888 .dept-filter-item { align-items: flex-start; scroll-margin-top: 120px; }
-            .elementor-7888 .dept-desc { margin-top: 15px; }
+            .elementor-7888 .dept-desc { margin-top: 5px; }
             .elementor-7888 .dept-desc .dept-label {
               font-family: "Bitter", serif; color: #034EA2; font-weight: 600;
               font-size: 17px; margin: 20px 0 8px; position: relative; padding-bottom: 8px;
