@@ -56,8 +56,11 @@ export default function AnimatedCounter({
   }, [target, duration]);
 
   return (
-    <span ref={ref}>
-      <h2 className="text-white! mb-0!">{count}</h2>
+    <span
+      ref={ref}
+      className="text-white! mb-0! text-2xl font-bold inline-block"
+    >
+      {count}
     </span>
   );
 }

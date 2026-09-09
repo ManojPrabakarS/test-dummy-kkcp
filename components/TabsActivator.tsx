@@ -31,10 +31,12 @@ export default function TabsActivator() {
         cleanups.push(() => title.removeEventListener("click", handler));
       });
 
-      // ensure the initially-selected tab's panel is shown
+      // ensure the initially-selected tab's panel is shown without conflicting with hydration
       const selected =
         titles.find((t) => t.getAttribute("aria-selected") === "true") || titles[0];
-      if (selected) activate(selected.getAttribute("aria-controls"));
+      if (selected) {
+        requestAnimationFrame(() => activate(selected.getAttribute("aria-controls")));
+      }
     });
 
     return () => cleanups.forEach((fn) => fn());
